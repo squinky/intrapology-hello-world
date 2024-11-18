@@ -1,0 +1,26 @@
+{
+	"performanceId": "hello-world",
+	"modPassword": "butts",
+	"title": "Hello World",
+	"callers": [ "Apple", "Banana" ],
+	"videoCallEmbedLink": "https://www.youtube.com/embed/jlyYqZqBDRw?si=sEtyIoaQfeWz5AOr",
+	"styles": {
+		"desktopBackground": "black url('images/stars.gif')",
+		"interactBackground": "rgba(0,0,0,0.8)",
+		"mainFont": "Courier, 'Courier New', monospace",
+		"mainTextColor": "white",
+		"taskbarBackground": "darkslateblue",
+		"taskbarTextColor": "black",
+		"taskbarHighlightColor": "dodgerblue",
+		"mainButtonBackground": "slateblue",
+		"mainButtonBackgroundHover": "dodgerblue",
+		"altButtonBackground": "darkslateblue",
+		"buttonTextColor": "black",
+		"mainHighlightBackground": "indigo",
+		"altHighlightBackground": "midnightblue",
+		"highlightTextColor": "white",
+		"subtitlesBackground": "darkslateblue",
+		"subtitlesTextColor": "white"
+	},
+	"defaultAudienceMessage": "You don't have to do anything right now - just sit back and enjoy the show!"
+}
