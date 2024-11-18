@@ -1,14 +1,14 @@
 # Intrapology
 
+# App Demo
+- Main Page: https://squinky.github.io/intrapology-hello-world/
+- Subtitles: https://squinky.github.io/intrapology-hello-world/#/subtitles
+- *TODO: separate pages for moderator/actors*
+
 # Initial Setup
 - Download the code in this project and put it somewhere sensible - it will become your project folder
 - To run the code on your computer, you'll need to set up a simple local testing server
     - Here is a good tutorial on how to do this: https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Tools_and_setup/set_up_a_local_testing_server
-
-# Running the App
-- Main Page: YOUR_URL_HERE/
-- Subtitles: YOUR_URL_HERE/#/subtitles
-- *TODO: separate pages for moderator/actors*
 
 # Settings
 - Open settings.json and edit the following values:
@@ -25,4 +25,3 @@
 - Download Inky: https://www.inklestudios.com/ink/
 - Open script.ink to see some examples of what you can do
 - Export your work to JSON as "script.json"
-
