@@ -8,7 +8,7 @@
 # Running the App
 - Main Page: YOUR_URL_HERE/
 - Subtitles: YOUR_URL_HERE/#/subtitles
-*TODO: separate pages for moderator/actors*
+- *TODO: separate pages for moderator/actors*
 
 # Settings
 - Open settings.json and edit the following values:
