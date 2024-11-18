@@ -2,8 +2,10 @@
 
 # App Demo
 - Main Page: https://squinky.github.io/intrapology-hello-world/
+- Actors: https://squinky.github.io/intrapology-hello-world/#/caller
+- Moderator: https://squinky.github.io/intrapology-hello-world/#/moderator
+    - Password: "butts"
 - Subtitles: https://squinky.github.io/intrapology-hello-world/#/subtitles
-- *TODO: separate pages for moderator/actors*
 
 # Initial Setup
 - Download the code in this project and put it somewhere sensible - it will become your project folder
@@ -15,7 +17,7 @@
     - **performanceId:** Make sure you name this something unique (eventually, we will be able to check this automatically)
     - **modPassword:** Whatever password you would like the moderator to use
     - **title:** The title of your performance
-    - **callers:** The characters in your play who will be performed by humans, in array format
+    - **callers:** The characters in your play who will be performed by human actors, in array format
         - You can now add as many or as few callers as you want, whether it's \["Apple"\] or \["Apple", "Banana", "Carrot", "Daikon"\]
     - **videoCallEmbedLink:** The embed link for your video call, URL only
     - **styles:** Change colours and fonts here
