@@ -260,7 +260,11 @@ Once installed, open Servez and do the following (the image below is annotated t
 2. Click the “Start” button, located towards the bottom left corner of the app window.
 3. Click the “Launch Browser” button, located next to the “Start” button. This should open the [audience view](#audience-view-example) of the Intrapology template performance in your default web browser.
 
-![servez_annotated.jpeg](doc/servez_annotated.jpeg)
+<p width="100%" align="center">
+    <a target="_blank" href="/doc/servez_annotated.jpeg">
+        <img src="/doc/servez_annotated.jpeg" alt="servez_annotated.jpeg" width="600">
+    </a>
+</p>
 
 Feel free to close Servez once you have verified that you are able to run a test Intrapology performance on your computer. You will not need to run Intrapology again until later in this guide. Servez will remember the Intrapology folder you selected, so from now on you will only need to click “Start” and then “Launch Browser” in order to test.
 
