@@ -1,5 +1,3 @@
-# Drafting
-
 # Introduction
 
 ## The Intrapology Software in a Nutshell
