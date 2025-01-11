@@ -584,13 +584,13 @@ The Intrapology software also offers a way to collect ‘free-response’ style 
 
 First, replace this line (at the end of the “MultipleChoice” knot):
 
-```json
+```
 - -> END
 ```
 
 With this:
 
-```json
+```
 - -> WriteIn
 ```
 
@@ -649,13 +649,13 @@ There are several things to note here:
 
 Replace this line (in the “WriteIn” knot):
 
-```json
+```
 @Write any thoughts you have about the topic here.
 ```
 
 with this:
 
-```json
+```
 @Write any thoughts you have about {topic} here.
 ```
 
@@ -698,7 +698,7 @@ so that it is like this:
 
 Note that now information is being stored in the `topic` variable which depends on the result of the audience vote. With this change, the contents of the prompt for this line:
 
-```json
+```
 @Write any thoughts you have about {topic} here.
 ```
 
@@ -1045,7 +1045,7 @@ There are several ways to specify a color.
 The simplest method for specifying a color is to use a name, for example:
 
 ```json
-mainTextColor: "blue",
+"mainTextColor": "blue",
 ```
 
 A list of available color names can be found here: [https://developer.mozilla.org/en-US/docs/Web/CSS/named-color#standard_colors](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color#standard_colors)
@@ -1054,14 +1054,14 @@ A list of available color names can be found here: [https://developer.mozilla.or
 
 Colors can also be specified in terms of red, green, and blue intensity percentages (RGB), like this:
 
-```json
+```
 rgb(RED INTENSITY, GREEN INTENSITY, BLUE INTENSITY)
 ```
 
 With this approach, the color is derived by mixing the three primary colors, set to certain intensities. An intensity of 0% for a primary color means that it contributes nothing to the final result. If all three primary colors are set to 0% intensity, then you get black: `rgb(0%, 0%, 0%)` is equivalent to the named color `"black"`. If all three primary colors are set to 100% intensity, then you get white: `rgb(100%, 100%, 100%)` is equivalent to the named color `“white”`. Setting the intensities of two of the primary colors to 0%, and then setting the intensity of the remaining primary color to something greater than 0%, will give you a shade of that primary color: `rgb(0%, 90%, 0%)` is a bright green, whereas `rgb(0%, 20%, 0%)` is a dark green. Nearly any color imaginable can be described this way. For example, to set the main text color of the Intrapology UI to a mild purple, you could specify a mix of: red at 60% intensity, green at 0% intensity, and blue at 50% intensity with the following:
 
 ```json
-mainTextColor: "rgb(60%, 0%, 50%)",
+"mainTextColor": "rgb(60%, 0%, 50%)",
 ```
 
 You can read more about the CSS `rgb` function here: [https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/rgb](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/rgb)
@@ -1079,7 +1079,7 @@ This article provides a technical overview of the various ways that colors can b
 The font for a given setting is specified as a list of one or more comma-separated font names. The first font in the list (in left to right order) found on the device viewing the UI will be used. For example, when given the following:
 
 ```json
-mainFont: "Arial, Helvetica, sans-serif",
+"mainFont": "Arial, Helvetica, sans-serif",
 ```
 
 the web browser being used to view the Intrapology UI will first try to use Arial for the main font. If Arial is not found, then the browser will look for Helvetica. If Helvetica is not available either, then the default sans serif font for the browser will be used.
@@ -1126,7 +1126,7 @@ CSS background is a rather large topic, only a small example of what is possible
 The simplest possible background can be set by providing any legal CSS color value, for example:
 
 ```json
-taskbarBackground: "blue",
+"taskbarBackground": "blue",
 ```
 
 You can also specify a url for a background image, how the image should be scaled and positioned, and what color should be present beyond the edges of the image, among many other properties. Each property is separated by a space. For example:
