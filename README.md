@@ -247,12 +247,12 @@ To download the Servez installer, go here: [https://github.com/greggman/servez/r
 
 - If you are using Windows, download “Servez.Setup.<version>.exe”
 - If you are using MacOS:
-    - If you are using an Apple Silicon Mac, download “Servez-<version>-arm64.dmg”
-    - If you are using an Intel Mac, download “Servez-<version>.dmg”
-    - If you are unsure which kind of Mac you have, download “Servez-<version>-universal.dmg”
+    - If you are using an Apple Silicon Mac, download “Servez-\<version\>-arm64.dmg”
+    - If you are using an Intel Mac, download “Servez-\<version\>.dmg”
+    - If you are unsure which kind of Mac you have, download “Servez-\<version\>-universal.dmg”
 - If you are using Linux:
-    - If you are using Ubuntu, you probably want to download "Servez_<version>_amd64.snap”
-    - Otherwise, you probably want to download “Servez-1.12.2.AppImage” (instructions for how to run an AppImage can be found here: [https://docs.appimage.org/introduction/quickstart.html#ref-quickstart](https://docs.appimage.org/introduction/quickstart.html#ref-quickstart))
+    - If you are using Ubuntu, you probably want to download "Servez_\<version\>_amd64.snap”
+    - Otherwise, you probably want to download “Servez-\<version\>.AppImage” (instructions for how to run an AppImage can be found here: [https://docs.appimage.org/introduction/quickstart.html#ref-quickstart](https://docs.appimage.org/introduction/quickstart.html#ref-quickstart))
 
 Once installed, open Servez and do the following (the image below is annotated to indicate where the buttons referred to are located):
 
