@@ -174,12 +174,8 @@ In general, settings are specified in the `settings.json` file with the followin
 "OPTION NAME": "OPTION VALUE",
 ```
 
-<aside>
-💡
-
-When discussing JSON, software developers will likely refer to `"OPTION NAME"` as a “field” or “property”, and will usually refer to `"OPTION VALUE"` as the value of that field/property. You do not need to know this to work with Intrapology on your own, but it may be helpful to know if you are collaborating with software developers or if you are looking for help online.
-
-</aside>
+> [!TIP]
+> When discussing JSON, software developers will likely refer to `"OPTION NAME"` as a “field” or “property”, and will usually refer to `"OPTION VALUE"` as the value of that field/property. You do not need to know this to work with Intrapology on your own, but it may be helpful to know if you are collaborating with software developers or if you are looking for help online.
 
 Open `settings.json` in a text editor of your choice, and we will take a look at a couple of important settings.
 
@@ -197,23 +193,15 @@ By default, the performance ID is specified on line 2 of `settings.json`:
 
 This line specifies that the setting called `"performanceId"` should have the value `"hello-world"`. However, since it is unsafe to use the default setting, change the text `hello-world` between the quotes to something else that you are confident nobody else will choose as an ID for their performance. The longer and more particular your ID is, the better.
 
-<aside>
-💡
-
-Your performance ID should not contain any whitespace characters (spaces, tabs, line returns, etc).
-
-</aside>
+> [!IMPORTANT]
+> Your performance ID should not contain any whitespace characters (spaces, tabs, line returns, etc).
 
 ### Character Names
 
 The other option which, if not set properly, will prevent the Intrapology software from functioning properly, is `"callers"`. The `"callers"` setting is used to specify the names of all characters which have dialogue in your performance.
 
-<aside>
-💡
-
-You do not need to change the `"callers"` setting if you will be following the script writing tutorial. The tutorial script uses character names which are already specified by default in `settings.json`. However, it is very important to understand how to register character names properly since you will likely be writing something of your own with different characters.
-
-</aside>
+> [!NOTE]
+> You do not need to change the `"callers"` setting if you will be following the script writing tutorial. The tutorial script uses character names which are already specified by default in `settings.json`. However, it is very important to understand how to register character names properly since you will likely be writing something of your own with different characters.
 
 On line 5 of `settings.json` is the following:
 
@@ -292,12 +280,8 @@ which are explained in this guide.
 
 Open Inky. You will see the default starter Ink script contents in the editor panel (the left half of the window). Delete all text except for the line with `-> END`, then save this new script (”File” menu → “Save Project”) as `tutorial-script.ink` in your `intrapology-hello-world` folder.
 
-<aside>
-💡
-
-Throughout the “Writing an Intrapology/Ink script” guide, you will be instructed to add various bits of text to your tutorial script. When adding the text to your script, try to do so by typing the text yourself rather than copying and pasting. This will help your brain to process and retain the information being covered.
-
-</aside>
+> [!TIP]
+> Throughout the “Writing an Intrapology/Ink script” guide, you will be instructed to add various bits of text to your tutorial script. When adding the text to your script, try to do so by typing the text yourself rather than copying and pasting. This will help your brain to process and retain the information being covered.
 
 ### Knots
 
@@ -307,14 +291,7 @@ Add the following line to the beginning of your script:
 == Start
 ```
 
-`==` followed by a name is a “knot heading”, which means: ‘the knot with this name begins here’.
-
-<aside>
-💡
-
-A “knot” is a piece of your script that can be referred to by name; you can think of a knot as a section or scene.
-
-</aside>
+`==` followed by a name is a “knot heading”, which means: ‘the knot with this name begins here’. A “knot” is a piece of your script that can be referred to by name; you can think of a knot as a section or scene.
 
 An Intrapology script needs at least one knot to function. You can name the knot anything you like in your scripts, but for this guide we use the name “Start”.
 
@@ -335,17 +312,13 @@ In Ink, writing `->` followed by a name means: ‘now go to the knot with this n
 
 The `-> END` divert already present at the end of the “Start” knot tells Intrapology that once the “Start” knot is finished, the performance should end. Note that you do not need to have a knot named `END`. `END` is a special built-in key word which does not refer to a knot in your script.
 
-<aside>
-💡
-
-It is best that whenever you add a new knot to your script, you are sure to do the following:
-
-1. End the knot with a divert either to `END` or to another knot.
-2. Consider which other knot(s), if present, should divert to this new knot, and add the associated diverts as soon as possible
-
-This will reduce the likelihood of unexpected problems later.
-
-</aside>
+> [!TIP]
+> It is best that whenever you add a new knot to your script, you are sure to do the following:
+>
+> 1. End the knot with a divert either to `END` or to another knot.
+> 2. Consider which other knot(s), if present, should divert to this new knot, and add the associated diverts as soon as possible
+> 
+> This will reduce the likelihood of unexpected problems later.
 
 Your script file should look like this now:
 
@@ -370,12 +343,8 @@ Banana: Hi, I'm the second video caller!
 
 Writing the name of a character (in this case “Apple” or “Banana”), followed by a colon “:”, followed by some text means ‘the character with this name says this text’. When each line of dialogue is reached during a performance, the Intrapology interface will show it to the relevant performer. Audience members who have loaded the [Subtitles View](#subtitles-view) will be shown the line of dialogue as well. The moderator view also displays the current line of dialogue.
 
-<aside>
-💡
-
-Remember: all character names used for dialogue in your script must be listed via the [`"callers"` option](#callers) in `settings.json`. Since “Apple” and “Banana” are already specified by default for the Intrapology Hello World template, no action is required for the current script to function properly. However, if you write a script with differently named characters, you will need to update `settings.json` accordingly.
-
-</aside>
+> [!WARNING]
+> Remember: all character names used for dialogue in your script must be listed via the [`"callers"` option](#callers) in `settings.json`. Since “Apple” and “Banana” are already specified by default for the Intrapology Hello World template, no action is required for the current script to function properly. However, if you write a script with differently named characters, you will need to update `settings.json` accordingly.
 
 At this point, the contents of your script file should look like this:
 
@@ -460,19 +429,11 @@ During a performance of a script containing the example above, the audience will
 
 Whichever choice receives the most audience votes will automatically become a part of the script as the next line of dialogue for the character named "Apple".
 
-<aside>
-💡
+> [!NOTE]
+> The prompt and choice input will remain visible to the audience until the choice group has been reached, at which point they will both disappear.
 
-Note: the prompt and choice input will remain visible to the audience until the choice group has been reached, at which point they will both disappear.
-
-</aside>
-
-<aside>
-💡
-
-You can use `*` or `+` for choices. For Intrapology these two options have the same meaning, but in other uses of Ink they function differently. We recommend using `*` in general, since the behavior of `+` in Ink and in the Intrapology software are different, whereas the behavior of `*` is the same in both contexts.
-
-</aside>
+> [!TIP]
+> You can use `*` or `+` for choices. For Intrapology these two options have the same meaning, but in other uses of Ink they function differently. We recommend using `*` in general, since the behavior of `+` in Ink and in the Intrapology software are different, whereas the behavior of `*` is the same in both contexts.
 
 ### Flow and Choice Branching
 
@@ -495,12 +456,8 @@ The diagram shows each choice branch leading to a different "???". There are two
 - With Ink/Intrapology, each individual choice is the start of its own branch of the flow. Each choice leads to a next step which is distinct from the steps of its 'sibling' choices. This is why the diagram shows each choice having its own outgoing arrow. What happens after a given choice is represented in a script by whatever content comes between that choice and the next sibling choice. An example of this will be given shortly.
 - Each choice necessarily leads to a next step, but our script so far does not specify what happens next for any of the choices present. Any choice which does not have an associated next step is akin to an implicit dead end, which is not allowed in an Intrapology script. Such a choice leads to a scenario where the flow has nowhere left to go even though an `-> END` divert has not been reached. Therefore it is required to specify what should happen after each choice. Every choice must be followed by *something*, even if that something is simply `-> END`. Luckily, Inky will display a warning when there is a choice which leads to a dead end.
 
-<aside>
-💡
-
-Ink requires that every possible user flow leads to a `-> END`. In cases where flow can run out without terminating in a `-> END`, Inky will highlight the relevant line of text with a ⚠️ symbol on the left edge of the window. The following warning message will be presented when hovering over the highlighted line: “Apparent loose end exists where the flow runs out.”
-
-</aside>
+> [!NOTE]
+> Ink requires that every possible user flow leads to a `-> END`. In cases where flow can run out without terminating in a `-> END`, Inky will highlight the relevant line of text with a ⚠️ symbol on the left edge of the window. The following warning message will be presented when hovering over the highlighted line: “Apparent loose end exists where the flow runs out.”
 
 In order to appease the computer, we can amend our recently added group of choices like so:
 
@@ -513,12 +470,8 @@ In order to appease the computer, we can amend our recently added group of choic
   -> END
 ```
 
-<aside>
-💡
-
-Note: choice branch content does not need to be indented (as it is in the above snippet), however the use of indentation can make the script easier to read at a glance.
-
-</aside>
+> [!TIP]
+> Choice branch content does not need to be indented (as it is in the above snippet), however the use of indentation can make the script easier to read at a glance.
 
 Now the performance will properly end if any of the listed choices are selected. The diagram below depicts the flow options for this updated script:
 
@@ -618,12 +571,8 @@ Banana: That's all, folks!
 
 In a knot with an `@`-prompt line and a line of dialogue with the exact text: `Firebase-read`, the audience will be prompted to write whatever they would like into a text box. Once the `CHARACTER: Firebase-read` line is reached, the relevant performer will be shown a list of the responses from each audience member. In this instance, audience members would be presented with the prompt “Write any thoughts you have the topic here.”, and the performer for “Apple” will be shown the audience responses.
 
-<aside>
-💡
-
-The write-in prompt will remain visible until another audience input line is reached. This is why we have added `+ z` (a fake choice which the audience will not be presented with): to cause the write-in prompt to go away before the next line.
-
-</aside>
+> [!NOTE]
+> The write-in prompt will remain visible until another audience input line is reached. This is why we have added `+ z` (a fake choice which the audience will not be presented with): to cause the write-in prompt to go away before the next line.
 
 ### Variables
 
@@ -829,12 +778,8 @@ Banana: That's all, folks!
 
 ## Configuration (`settings.json`)
 
-<aside>
-💡
-
-Configuration items tagged with **[REQUIRED]** must be changed from their default values in order for your performance to work as expected.
-
-</aside>
+> [!IMPORTANT]
+> Configuration items tagged with **[REQUIRED]** must be changed from their default values in order for your performance to work as expected.
 
 ### **performanceId**
 
@@ -1137,12 +1082,8 @@ You can also specify a url for a background image, how the image should be scale
 
 will result in a background with the image at ‘https://squinky.github.io/intrapology-hello-world/images/stars.gif’ scaled to 30% size, centered, with the color orange in the areas not covered by the image.
 
-<aside>
-💡
-
-`url(...)` allows you to specify any image that is located somewhere on the internet (or even your own images that you add to your performance, more on that in the next section). To do so, you simply need to provide the url (internet address) where the image is located.
-
-</aside>
+> [!TIP]
+> `url(...)` allows you to specify any image that is located somewhere on the internet (or even your own images that you add to your performance, more on that in the next section). To do so, you simply need to provide the url (internet address) where the image is located.
 
 **Using Your Own Images**
 
@@ -1165,12 +1106,8 @@ We recommend including sign language interpretation in your performance, to broa
 
 Dialogue is grouped exactly as formatted in your script. Long stretches of dialogue, when written as single paragraphs, can result in subtitles which are impractical.
 
-<aside>
-💡
-
-The maximum recommended length for a single block of dialogue is 128 characters. Anything longer will require more than two lines to display on most devices.
-
-</aside>
+> [!IMPORTANT]
+> The maximum recommended length for a single block of dialogue is 128 characters. Anything longer will require more than two lines to display on most devices.
 
 To keep subtitles at a manageable length, break large blocks of dialogue into separate groups. For example, this entire block of dialogue:
 
