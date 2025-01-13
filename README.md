@@ -233,7 +233,7 @@ To run Intrapology on your computer, you will need to install a program that run
 
 To download the Servez installer, go here: [https://github.com/greggman/servez/releases/latest](https://github.com/greggman/servez/releases/latest). If you are unsure which version to download, follow these guidelines:
 
-- If you are using Windows, download “Servez.Setup.<version>.exe”
+- If you are using Windows, download “Servez.Setup.\<version\>.exe”
 - If you are using MacOS:
     - If you are using an Apple Silicon Mac, download “Servez-\<version\>-arm64.dmg”
     - If you are using an Intel Mac, download “Servez-\<version\>.dmg”
@@ -368,11 +368,11 @@ If you have not already done so, you must [set a unique Performance ID](#perform
 
 1. First you need to ‘export’ the script to a file format that Intrapology can use. To do so, go to the “File” menu and click the item labelled “Export to JSON…”. Name the exported file `script.json` (make sure you aren’t using the default name `script.ink.json`) and save it in your `intrapology-hello-world` folder.
 2. Open Servez and click the “Start” button.
-3. Click the “Launch Browser” button, which will open the Audience View in your default web browser. Make a note of the URL in the address bar (it will be something like “localhost:8080”), you will need it for the next step. It will be referred to from here on as “<base url>”.
+3. Click the “Launch Browser” button, which will open the Audience View in your default web browser. Make a note of the URL in the address bar (it will be something like “localhost:8080”), you will need it for the next step. It will be referred to from here on as “\<base url\>”.
 4. Go to the following additional pages, each in a separate web browser window:
-    1. Go to “<base-url>/#caller” and select “Apple”
-    2. Go to “<base-url>/#caller” and select “Banana”
-    3. Go to “<base-url>/#moderator” and enter the default password (”butts”), unless you have changed the password to something else.
+    1. Go to “\<base-url\>/#caller” and select “Apple”
+    2. Go to “\<base-url\>/#caller” and select “Banana”
+    3. Go to “\<base-url\>/#moderator” and enter the default password (”butts”), unless you have changed the password to something else.
 
 You should now be able to use the Moderator View to step through the performance so far. Here is a screen recording of what this should look like (minus the Audience View):
 
@@ -1053,9 +1053,9 @@ Here is a quick guide to using a custom font:
 2. On the page for the font you have selected, click the “Get font” button in the upper right corner of the view.
 3. Make sure that the text at the top of the page says "1 font family selected”. If the number selected is greater than one you may have accidentally selected multiple fonts. In such a case you will want to use the trash bin icon next to any extraneous fonts to remove those from the selection list.
 4. Click the “Get embed code” button on the right-hand edge of the page.
-5. On the “Embed code” page, the right-hand portion of the view will have a pair of buttons labelled “<link>” and “@import”. “<link>” is selected by default, select “@import” instead.
-6. There will be a box labelled “<Font Name>: CSS classes”. Inside the box will be some text, you can ignore most of it, but take a note of the first line you see which begins with “font-family: “. This line will show you how to refer to the font by name in `settings.json`. For Libre Baskerville, the line in question is: `font-family: "Libre Baskerville", serif;`. The bit to write down somewhere is the font name in between quotes (e.g. ”Libre Baskerville”)
-7. There will be a box labelled “Embed code in the <head> of your html”. Inside the box will be a button labelled “Copy code”: click this button.
+5. On the “Embed code” page, the right-hand portion of the view will have a pair of buttons labelled “\<link\>” and “@import”. “\<link\>” is selected by default, select “@import” instead.
+6. There will be a box labelled “\<Font Name\>: CSS classes”. Inside the box will be some text, you can ignore most of it, but take a note of the first line you see which begins with “font-family: “. This line will show you how to refer to the font by name in `settings.json`. For Libre Baskerville, the line in question is: `font-family: "Libre Baskerville", serif;`. The bit to write down somewhere is the font name in between quotes (e.g. ”Libre Baskerville”)
+7. There will be a box labelled “Embed code in the \<head\> of your html”. Inside the box will be a button labelled “Copy code”: click this button.
 8. Open `intrapology-hello-world/index.html` in a text editor. Right between this bit of text: `<!doctype html><html lang="en"><head>` (found at the very beginning of the file) and this bit of text: `<meta charset="utf-8"/>`, paste the code that was copied during the previous step. Make sure to save this change to the file.
 9. Open `intrapology-hello-world/settings.json` and add the font name from step 6 to the beginning of the list of fonts. Make sure that you use single quotes instead of double quotes. For example, if adding Libre Baskerville the whole line in `settings.json` should be: 
     
