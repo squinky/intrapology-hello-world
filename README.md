@@ -6,37 +6,37 @@ Intrapology’s software is a tool for building performances which are interacti
 
 ### Interactivity
 
-Intrapology facilitates the creation of performances that can incorporate and react to input from the audience. This is accomplished with the following features:
+Our software facilitates the creation of performances that can incorporate and react to input from the audience. This is accomplished with the following features:
 
-- [Audience input UI:](#audience-view) Intrapology allows audience members to contribute via [multiple-choice](#multiple-choice) and [free-response](#free-response) questions.
-- Dynamic scripts: Intrapology allows authors to write dialogue and stories that change based on input received from the audience.
+- [Audience input UI:](#audience-view) Intrapology's software allows audience members to contribute via [multiple-choice](#multiple-choice) and [free-response](#free-response) questions.
+- Dynamic scripts: Our software allows authors to write dialogue and stories that change based on input received from the audience.
 
 ### Accessibility
 
-Helping make performances more accessible is a key motivation behind the existence of Intrapology. All performances built with Intrapology have these accessibility features:
+Helping make performances more accessible is a key motivation behind the existence of Intrapology's software. All performances built with the Intrapology software have these accessibility features:
 
-- Intrapology facilitates both fully-online and hybrid performances, by integrating [a live video stream](#audience-view-main) into the UI. This allows performances built using Intrapology to be accessible to people who face barriers to in-person venues.
-- Intrapology includes a built-in subtitles interface which:
+- Both fully-online and hybrid performances are supported, through the inclusion of [a live video stream](#audience-view-main) in the UI. This allows performances built using the Intrapology software to be accessible to people who face barriers to in-person venues.
+- A built-in subtitles interface which:
     - Automatically generates subtitles from the performance script.
     - [Displays subtitles](#subtitles-view) in sync with the performance.
 
 ## Example
 
-Here is an exceprt from a real performance built with a previous version of our software (you can find the entire recording [here](https://peertube.intrapology.com/w/5Hrv9k1YgywsQh6TUFBzrB)):
+Here is an excerpt from a real performance built with our software (you can find the entire recording [here](https://peertube.intrapology.com/w/5Hrv9k1YgywsQh6TUFBzrB)):
 
 [Meghna Jayanth Oct 2024-Intro.webm](https://github.com/user-attachments/assets/da64e132-89cd-4b8c-affc-774ab147a98d)
 
 ## Hello World Template vs App
 
-There are two versions of the Intrapology software available to download.
+There are two versions of the Intrapology software available to download:
 
 ### Intrapology Hello World
 
-Intrapology Hello World is a preconfigured starter template. If you are new to Intrapology, it is best to start with this version. The Hello World template is designed to enable artists with no software development knowledge to create complete performances. For information on how to download the Hello World template, see this section: [Downloading the Starter Template](#downloading-the-starter-template).
+Intrapology Hello World is a preconfigured starter template. If you are new to our software, it is best to start with this version. The Hello World template is designed to enable artists with no software development knowledge to create complete performances. For information on how to download the Hello World template, see this section: [Downloading the Starter Template](#downloading-the-starter-template).
 
 ### Intrapology App
 
-Intrapology App is the code which handles the core functionality of Intrapology. If you end up needing to make customizations or add functionality beyond what is possible in the Hello World starter template, then you will need to build on top of the core Intrapology App code rather than the Hello World template. Building with Intrapology App requires the ability to program with JavaScript, React, and CSS. Intrapology App can be found here: [https://github.com/squinky/intrapology-app](https://github.com/squinky/intrapology-app).
+Intrapology App is the code which handles the core functionality of Intrapology's software. If you end up needing to make customizations or add functionality beyond what is possible in the Hello World starter template, then you will need to build on top of the core Intrapology App code rather than the Hello World template. Building with Intrapology App requires the ability to program with JavaScript, React, and CSS. Intrapology App can be found here: [https://github.com/squinky/intrapology-app](https://github.com/squinky/intrapology-app).
 
 # Overview
 
@@ -50,7 +50,7 @@ A video stream where audience members can see and hear your actors.
 
 ### Moderator
 
-A member of your crew who is responsible for controlling the pace of the performance. The Intrapology software automatically handles tasks such as displaying the current line of dialogue to the relevant actor and gathering audience input. However, in order for Intrapology to know when it is time to advance to the next line of dialogue, [manual input from a moderator is needed](#performance-controls).
+A member of your crew who is responsible for controlling the pace of the performance. The Intrapology software automatically handles tasks such as displaying the current line of dialogue to the relevant actor and gathering audience input. However, in order for the software to know when it is time to advance to the next line of dialogue, [manual input from a moderator is needed](#performance-controls).
 
 ### Actors
 
@@ -62,7 +62,7 @@ The audience also [plays an active role](#audience-input) in the formal flow of 
 
 ## User Interface
 
-During a performance, Intrapology provides four different views:
+During a performance, the Intrapology software provides four different views:
 
 1. [Audience View](#audience-view) 
 2. [Subtitles View](#subtitles-view) 
@@ -140,7 +140,7 @@ And here is an example of what the actor for the character named “Apple” see
 
 ### Demonstration
 
-Here is an example run-through of the Intrapology sample script (included as `script.ink`), showing how of the moderator view (top left), audience view (top right), and actor view (bottom left and right) change as the performance progresses:
+Here is an example run-through of the sample script (included as `script.ink` with the Intrapology Hello World), showing how of the moderator view (top left), audience view (top right), and actor view (bottom left and right) change as the performance progresses:
 
 https://github.com/user-attachments/assets/2e52d864-066f-41e6-955b-4d931011e715
 
@@ -183,7 +183,7 @@ Open `settings.json` in a text editor of your choice, and we will take a look at
 
 The ‘ID’ of your performance is a unique name that is used to distinguish it from other performances. The performance ID is not the title of your performance that is shown to the audience. For setting the title of your performance that will be displayed in the audience view, see [this section](#title).
 
-The performance ID is used by the database that keeps track of the state of a performance (e.g. the current line of dialogue, audience voting selections, etc). It is very important that you set a unique ID for your performance. Intrapology will behave unpredictably if running multiple performances with the same ID at the same time.
+The performance ID is used by the database that keeps track of the state of a performance (e.g. the current line of dialogue, audience voting selections, etc). It is very important that you set a unique ID for your performance. The Intrapology software will behave unpredictably if running multiple performances with the same ID at the same time.
 
 By default, the performance ID is specified on line 2 of `settings.json`:
 
@@ -227,9 +227,9 @@ This line specifies that the performance has two dialogue-speaking characters: a
 
 ## Testing a Performance on Your Computer
 
-Intrapology is designed to run on a web server on the internet, but with a small bit of setup it is possible to do test runs of performances on your own computer.
+Our software is designed to run on a web server on the internet, but with a small bit of setup it is possible to do test runs of performances on your own computer.
 
-To run Intrapology on your computer, you will need to install a program that runs a server ‘locally’. This guide will show you how to use an app called Servez for this purpose.
+To run the Intrapology software on your computer, you will need to install a program that runs a server ‘locally’. This guide will show you how to use an app called Servez for this purpose.
 
 To download the Servez installer, go here: [https://github.com/greggman/servez/releases/latest](https://github.com/greggman/servez/releases/latest). If you are unsure which version to download, follow these guidelines:
 
@@ -254,7 +254,7 @@ Once installed, open Servez and do the following (the image below is annotated t
     </a>
 </p>
 
-Feel free to close Servez once you have verified that you are able to run a test Intrapology performance on your computer. You will not need to run Intrapology again until later in this guide. Servez will remember the Intrapology folder you selected, so from now on you will only need to click “Start” and then “Launch Browser” in order to test.
+Feel free to close Servez once you have verified that you are able to run a test Intrapology performance on your computer. You will not need to run it again until later in this guide. Servez will remember the Intrapology folder you selected, so from now on you will only need to click “Start” and then “Launch Browser” in order to test.
 
 ## Installing Inky
 
@@ -310,7 +310,7 @@ Add the following text on its own line at the beginning of the script (before th
 
 In Ink, writing `->` followed by a name means: ‘now go to the knot with this name’. This is called a “divert”. Every Intrapology script must begin with a divert specifying which knot to start the performance with (even if the script only has one knot). The divert above tells the Intrapology software that your performance starts with the knot named “Start”.
 
-The `-> END` divert already present at the end of the “Start” knot tells Intrapology that once the “Start” knot is finished, the performance should end. Note that you do not need to have a knot named `END`. `END` is a special built-in key word which does not refer to a knot in your script.
+The `-> END` divert already present at the end of the “Start” knot tells the Intrapology software that once the “Start” knot is finished, the performance should end. Note that you do not need to have a knot named `END`. `END` is a special built-in key word which does not refer to a knot in your script.
 
 > [!TIP]
 > It is best that whenever you add a new knot to your script, you are sure to do the following:
@@ -360,13 +360,13 @@ Banana: Hi, I'm the second video caller!
 -> END
 ```
 
-This is enough to use for a trial run with Intrapology.
+This is enough to use for a trial run with the Intrapology software.
 
 ### Running the Performance Locally
 
 If you have not already done so, you must [set a unique Performance ID](#performance-id) and [install and set up Servez](#testing-a-performance-on-your-computer) before continuing.
 
-1. First you need to ‘export’ the script to a file format that Intrapology can use. To do so, go to the “File” menu and click the item labelled “Export to JSON…”. Name the exported file `script.json` (make sure you aren’t using the default name `script.ink.json`) and save it in your `intrapology-hello-world` folder.
+1. First you need to ‘export’ the script to a file format that the Intrapology software can use. To do so, go to the “File” menu and click the item labelled “Export to JSON…”. Name the exported file `script.json` (make sure you aren’t using the default name `script.ink.json`) and save it in your `intrapology-hello-world` folder.
 2. Open Servez and click the “Start” button.
 3. Click the “Launch Browser” button, which will open the Audience View in your default web browser. Make a note of the URL in the address bar (it will be something like “localhost:8080”), you will need it for the next step. It will be referred to from here on as “\<base url\>”.
 4. Go to the following additional pages, each in a separate web browser window:
@@ -453,7 +453,7 @@ graph TD
 
 The diagram shows each choice branch leading to a different "???". There are two important points which need to be noted here:
 
-- With Ink/Intrapology, each individual choice is the start of its own branch of the flow. Each choice leads to a next step which is distinct from the steps of its 'sibling' choices. This is why the diagram shows each choice having its own outgoing arrow. What happens after a given choice is represented in a script by whatever content comes between that choice and the next sibling choice. An example of this will be given shortly.
+- With Ink/Intrapology scripts, each individual choice is the start of its own branch of the flow. Each choice leads to a next step which is distinct from the steps of its 'sibling' choices. This is why the diagram shows each choice having its own outgoing arrow. What happens after a given choice is represented in a script by whatever content comes between that choice and the next sibling choice. An example of this will be given shortly.
 - Each choice necessarily leads to a next step, but our script so far does not specify what happens next for any of the choices present. Any choice which does not have an associated next step is akin to an implicit dead end, which is not allowed in an Intrapology script. Such a choice leads to a scenario where the flow has nowhere left to go even though an `-> END` divert has not been reached. Therefore it is required to specify what should happen after each choice. Every choice must be followed by *something*, even if that something is simply `-> END`. Luckily, Inky will display a warning when there is a choice which leads to a dead end.
 
 > [!NOTE]
@@ -497,7 +497,7 @@ Non-choice content directly below a choice represents what should happen after t
   Banana: Some of my best friends are cats.
   -> SomeOtherKnot
 * Apple: Late-stage capitalism!
-  Banana: A geriatric system desperately clinging to pallative measures.
+  Banana: All that was solid has melted into air.
   -> YetAnotherKnot
 ```
 
