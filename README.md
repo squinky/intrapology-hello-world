@@ -22,9 +22,9 @@ Helping make performances more accessible is a key motivation behind the existen
 
 ## Example
 
-Here is an exceprt from a real performance built with a previous version of our software (you can find the entire performance [here](https://peertube.intrapology.com/w/5Hrv9k1YgywsQh6TUFBzrB)):
+Here is an exceprt from a real performance built with a previous version of our software (you can find the entire recording [here](https://peertube.intrapology.com/w/5Hrv9k1YgywsQh6TUFBzrB)):
 
-https://github.com/user-attachments/assets/18edac65-ca44-4ea6-88c2-4a7f52a59880
+[Meghna Jayanth Oct 2024-Intro.webm](https://github.com/user-attachments/assets/da64e132-89cd-4b8c-affc-774ab147a98d)
 
 ## Hello World Template vs App
 
