@@ -591,7 +591,7 @@ Banana: That's all, folks!
 -> END
 ```
 
-In a knot with an `@`-prompt line and a line of dialogue with the exact text: `Firebase-read`, the audience will be prompted to write whatever they would like into a text box. Once the `CHARACTER: Firebase-read` line is reached, the relevant performer will be shown a list of the responses from each audience member. In this instance, audience members would be presented with the prompt “Write any thoughts you have the topic here.”, and the performer for “Apple” will be shown the audience responses.
+In a knot with an `@`-prompt line and a line of dialogue with the exact text: `Firebase-read`, the audience will be prompted to write whatever they would like into a text box. Once the `CHARACTER: Firebase-read` line is reached, the relevant performer will be shown a list of the responses from each audience member. In this instance, audience members would be presented with the prompt “Write any thoughts you have about the topic here.”, and the performer for `Apple` will be shown the audience responses.
 
 > [!NOTE]
 > The write-in prompt will remain visible until another audience input line is reached. This is why we have added `+ z` (a fake choice which the audience will not be presented with): to cause the write-in prompt to go away before the next line.
@@ -612,9 +612,9 @@ VAR excitementLevel = 1
 There are several things to note here:
 
 - `VAR someVariable = 0` tells the computer that you would a variable named “someVariable” to exist, and that it should start out containing the value `0`.
-- Variable names cannot contain spaces. “excitement level” is not a legal name for a variable.
-- Variables must be created before they can be used. If you try to use the variable named “topic” on a line before `VAR topic = ...` has been specified, the computer will not know what to do.
-- Variables can store different kinds of information, such as text (which must between double quotes), numbers and .
+- Variable names cannot contain spaces. `excitement level` is not a legal name for a variable.
+- Variables must be created before they can be used. If you try to use the variable named `topic` on a line before `VAR topic = ...` has been specified, the computer will not know what to do.
+- Variables can store different kinds of information, such as text (which must between double quotes) and numbers.
 
 **Using Information Stored in Variables**
 
@@ -738,8 +738,8 @@ Banana: That's all, folks!
 
 ## Summary
 
-- Knots: `== Start` is a “knot heading”, which means ‘the knot (section) named `Start` begins here’. To learn more, go here: [https://github.com/inkle/ink/blob/v.1.2.0/Documentation/WritingWithInk.md#3-knots](https://github.com/inkle/ink/blob/v.1.2.0/Documentation/WritingWithInk.md#3-knots)
-- **Dialogue**: `Apple: Hi, I'm the first video caller!`  means ‘the character named `Apple` says “Hi, I’m the first video caller!”’. This will be shown to the performer for the Apple character via their [Actor View](#actor-view) .
+- **Knots**: `== Start` is a “knot heading”, which means ‘the knot (section) named `Start` begins here’. To learn more, go here: [https://github.com/inkle/ink/blob/v.1.2.0/Documentation/WritingWithInk.md#3-knots](https://github.com/inkle/ink/blob/v.1.2.0/Documentation/WritingWithInk.md#3-knots)
+- **Dialogue**: `Apple: Hi, I'm the first video caller!`  means ‘the character named `Apple` says “Hi, I’m the first video caller!”’. This will be shown to the performer for the `Apple` character via their [Actor View](#actor-view).
 - **Diverts**: `-> Start` means ‘go to the knot named `Start`’
     - You must begin your script with a divert telling Intrapology which knot to go to first.
     - You must have at least one `-> END` divert telling Intrapology where the performance ends. Inky will warn you if you are missing this.
@@ -759,7 +759,7 @@ Banana: That's all, folks!
     - Is labeled “What should be our next topic of discussion?”
     - Has the following options to vote for the next line of dialogue: `Apple: The weather!`, `Apple: Cats!`, and `Apple: Late-stage capitalism!`
     
-    The option which receives the most votes will be shown to the performer for “Apple”.
+    The option which receives the most votes will be shown to the performer for `Apple`.
     
     To learn more, go here: [https://github.com/inkle/ink/blob/v.1.2.0/Documentation/WritingWithInk.md#2-choices](https://github.com/inkle/ink/blob/v.1.2.0/Documentation/WritingWithInk.md#2-choices)
     
@@ -787,7 +787,7 @@ Banana: That's all, folks!
         Apple: I can't stop thinking about {topic}!
         ```
         
-        When the line of dialogue above is reached during a performance, the performer for “Apple” will be shown the line: “I can't stop thinking about cats!”.
+        When the line of dialogue above is reached during a performance, the performer for `Apple` will be shown the line: “I can't stop thinking about cats!”.
         
         To learn more, go here: [https://github.com/inkle/ink/blob/v.1.2.0/Documentation/WritingWithInk.md#part-3-variables-and-logic](https://github.com/inkle/ink/blob/v.1.2.0/Documentation/WritingWithInk.md#part-3-variables-and-logic)
         
@@ -829,7 +829,7 @@ The YouTube URL for your performance video stream.
 
 ### **styles**
 
-Change colours, fonts, and backgrounds here. For a list of available options with examples, go to this section: [Customizations to Visual Presentation (`settings.json` styles)](#customizations-to-visual-presentation-settingsjson-styles).
+Change colours, fonts, and backgrounds here. For a list of available options with examples, go to this section: [Customizations to Visual Presentation (settings.json styles)](#customizations-to-visual-presentation-settingsjson-styles).
 
 ### **defaultAudienceMessage**
 
@@ -845,7 +845,7 @@ The following options are available for customizing the look of the Intrapology 
 
 This determines the background color/image for the [main area of the Audience View](#audience-view-main). By default this is set to an animated image of flickering stars.
 
-Here is an example of what the Audience View UI looks like when `desktopBackground` has been set to “fuchsia”:
+Here is an example of what the Audience View UI looks like when `desktopBackground` has been set to `fuchsia`:
 
 ![desktopBackground-fuchsia.jpeg](doc/desktopBackground-fuchsia.jpeg)
 
@@ -855,7 +855,7 @@ Here is an example of what the Audience View UI looks like when `desktopBackgrou
 
 This determines the background color/image for the [audience input area of the Audience View](#audience-input). By default this is set to a slightly transparent black.
 
-Here is an example of what the Audience View UI looks like when `interactBackground` has been set to “fuchsia”:
+Here is an example of what the Audience View UI looks like when `interactBackground` has been set to `fuchsia`:
 
 ![interactBackground-fuchsia.jpeg](doc/interactBackground-fuchsia.jpeg)
 
@@ -863,9 +863,9 @@ Here is an example of what the Audience View UI looks like when `interactBackgro
 
 **Type:** [Font](#font)
 
-This determines the font for all text in the UI except for subtitles. By default this is set to “Courier”.
+This determines the font for all text in the UI except for subtitles. By default this is set to `Courier`.
 
-Here is an example of what the Audience View UI looks like when `mainFont` has been set to “cursive”:
+Here is an example of what the Audience View UI looks like when `mainFont` has been set to `cursive`:
 
 ![mainFont-cursive.jpeg](doc/mainFont-cursive.jpeg)
 
@@ -883,9 +883,9 @@ This determines the color for:
 - Actor View:
     - Current line text
 
-By default this is set to “white”.
+By default this is set to `white`.
 
-Here is an example of what the Audience View UI looks like when `mainTextColor` has been set to “fuchsia”:
+Here is an example of what the Audience View UI looks like when `mainTextColor` has been set to `fuchsia`:
 
 ![mainTextColor-fuchsia.jpeg](doc/mainTextColor-fuchsia.jpeg)
 
@@ -893,9 +893,9 @@ Here is an example of what the Audience View UI looks like when `mainTextColor` 
 
 **Type: **[Background](#background)
 
-This determines the background for the bar at the top of the Audience View UI, as well as the bar on top of the video feed box. By default this is set to “darkslateblue”.
+This determines the background for the bar at the top of the Audience View UI, as well as the bar on top of the video feed box. By default this is set to `darkslateblue`.
 
-Here is an example of what the Audience View UI looks like when `taskbarBackground` has been set to “fuchsia”:
+Here is an example of what the Audience View UI looks like when `taskbarBackground` has been set to `fuchsia`:
 
 ![taskbarBackground-fuchsia.jpeg](doc/taskbarBackground-fuchsia.jpeg)
 
@@ -903,9 +903,9 @@ Here is an example of what the Audience View UI looks like when `taskbarBackgrou
 
 **Type: **[Color](#color)
 
-This determines the color for all text and icons in the taskbar at the top of the Audience View, except for the leftmost icon. By default this is set to “black”.
+This determines the color for all text and icons in the taskbar at the top of the Audience View, except for the leftmost icon. By default this is set to `black`.
 
-Here is an example of what the Audience View UI looks like when `taskbarTextColor` has been set to “fuchsia”:
+Here is an example of what the Audience View UI looks like when `taskbarTextColor` has been set to `fuchsia`:
 
 ![taskbarTextColor-fuchsia.jpeg](doc/taskbarTextColor-fuchsia.jpeg)
 
@@ -913,9 +913,9 @@ Here is an example of what the Audience View UI looks like when `taskbarTextColo
 
 **Type: **[Color](#color)
 
-This determines the color for leftmost icon in the taskbar at the top of the Audience View. By default this is set to “dodgerblue”.
+This determines the color for leftmost icon in the taskbar at the top of the Audience View. By default this is set to `dodgerblue`.
 
-Here is an example of what the Audience View UI looks like when `taskbarHighlightColor` has been set to “fuchsia”:
+Here is an example of what the Audience View UI looks like when `taskbarHighlightColor` has been set to `fuchsia`:
 
 ![taskbarHighlightColor-fuchsia.jpeg](doc/taskbarHighlightColor-fuchsia.jpeg)
 
@@ -923,9 +923,9 @@ Here is an example of what the Audience View UI looks like when `taskbarHighligh
 
 **Type: **[Background](#background)
 
-This determines the background for all buttons in the UI. By default this is set to “slateblue”.
+This determines the background for all buttons in the UI. By default this is set to `slateblue`.
 
-Here is an example of what the Audience View UI looks like when `buttonBackground` has been set to “fuchsia”:
+Here is an example of what the Audience View UI looks like when `buttonBackground` has been set to `fuchsia`:
 
 ![buttonBackground-fuchsia.jpeg](doc/buttonBackground-fuchsia.jpeg)
 
@@ -933,9 +933,9 @@ Here is an example of what the Audience View UI looks like when `buttonBackgroun
 
 **Type: **[Background](#background)
 
-This determines the background for any button that the mouse is hovering over. By default this is set to “dodgerblue”.
+This determines the background for any button that the mouse is hovering over. By default this is set to `dodgerblue`.
 
-Here is an example of what the Audience View UI looks like when `buttonBackgroundHover` has been set to “fuchsia” and the user’s mouse is hovering over the button labelled “The weather! (0 votes)”:
+Here is an example of what the Audience View UI looks like when `buttonBackgroundHover` has been set to `fuchsia` and the user’s mouse is hovering over the button labelled “The weather! (0 votes)”:
 
 ![buttonBackgroundHover-fuchsia.jpeg](doc/buttonBackgroundHover-fuchsia.jpeg)
 
@@ -943,9 +943,9 @@ Here is an example of what the Audience View UI looks like when `buttonBackgroun
 
 **Type:** [Color](#color)
 
-This determines the text color for all buttons in the UI. By default this is set to “black”.
+This determines the text color for all buttons in the UI. By default this is set to `black`.
 
-Here is an example of what the Audience View UI looks like when `buttonTextColor` has been set to “fuchsia”:
+Here is an example of what the Audience View UI looks like when `buttonTextColor` has been set to `fuchsia`:
 
 ![buttonTextColor-fuchsia.jpeg](doc/buttonTextColor-fuchsia.jpeg)
 
@@ -953,9 +953,9 @@ Here is an example of what the Audience View UI looks like when `buttonTextColor
 
 **Type:** [Color](#color)
 
-This determines the background color for the “⭐️ winning” tag in the multiple choice mode of the Audience View UI. By default this is set to “indigo”.
+This determines the background color for the “⭐️ winning” tag in the multiple choice mode of the Audience View UI. By default this is set to `indigo`.
 
-Here is an example of what the Audience View UI looks like when `mainHighlightBackground` has been set to “fuchsia”:
+Here is an example of what the Audience View UI looks like when `mainHighlightBackground` has been set to `fuchsia`:
 
 ![mainHighlightBackground-fuchsia.jpeg](doc/mainHighlightBackground-fuchsia.jpeg)
 
@@ -963,9 +963,9 @@ Here is an example of what the Audience View UI looks like when `mainHighlightBa
 
 **Type: **[Background](#background)
 
-This determines the background color for the “✅ selected” tag in the multiple choice mode of the Audience View UI. By default this is set to “midnightblue”.
+This determines the background color for the “✅ selected” tag in the multiple choice mode of the Audience View UI. By default this is set to `midnightblue`.
 
-Here is an example of what the Audience View UI looks like when `altHighlightBackground` has been set to “fuchsia”:
+Here is an example of what the Audience View UI looks like when `altHighlightBackground` has been set to `fuchsia`:
 
 ![altHighlightBackground-fuchsia.jpeg](doc/altHighlightBackground-fuchsia.jpeg)
 
@@ -973,9 +973,9 @@ Here is an example of what the Audience View UI looks like when `altHighlightBac
 
 **Type: **[Color](#color)
 
-This determines the text color for the “⭐️ winning” and “✅ selected” tags in the multiple choice mode of the Audience View UI. By default this is set to “white”.
+This determines the text color for the “⭐️ winning” and “✅ selected” tags in the multiple choice mode of the Audience View UI. By default this is set to `white`.
 
-Here is an example of what the Audience View UI looks like when `highlightTextColor` has been set to “fuchsia”:
+Here is an example of what the Audience View UI looks like when `highlightTextColor` has been set to `fuchsia`:
 
 ![highlightTextColor-fuchsia.jpeg](doc/highlightTextColor-fuchsia.jpeg)
 
@@ -983,9 +983,9 @@ Here is an example of what the Audience View UI looks like when `highlightTextCo
 
 **Type: **[Background](#background)
 
-This determines the background for the Subtitles View. By default this is set to “darkslateblue”.
+This determines the background for the Subtitles View. By default this is set to `darkslateblue`.
 
-Here is an example of what the Subtitles View UI looks like when `subtitlesBackground` has been set to “fuchsia”:
+Here is an example of what the Subtitles View UI looks like when `subtitlesBackground` has been set to `fuchsia`:
 
 ![subtitlesBackground-fuchsia.jpeg](doc/subtitlesBackground-fuchsia.jpeg)
 
@@ -993,9 +993,9 @@ Here is an example of what the Subtitles View UI looks like when `subtitlesBackg
 
 **Type: **[Color](#color)
 
-This determines the text color for the Subtitles View. By default this is set to “white”.
+This determines the text color for the Subtitles View. By default this is set to `white`.
 
-Here is an example of what the Subtitles View UI looks like when `subtitlesTextColor` has been set to “fuchsia”:
+Here is an example of what the Subtitles View UI looks like when `subtitlesTextColor` has been set to `fuchsia`:
 
 ![subtitlesTextColor-fuchsia.jpeg](doc/subtitlesTextColor-fuchsia.jpeg)
 
