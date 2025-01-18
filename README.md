@@ -50,7 +50,7 @@ Making performances more accessible is a key goal of Intrapology’s software. A
 
 Here is an excerpt from a real performance built with our software (you can find the entire recording [here](https://peertube.intrapology.com/w/5Hrv9k1YgywsQh6TUFBzrB)):
 
-![Meghna Jayanth Oct 2024 Scratch Jam Performance - Intro](https://github.com/user-attachments/assets/da64e132-89cd-4b8c-affc-774ab147a98d)
+[Meghna Jayanth Oct 2024 Scratch Jam Performance - Intro](https://github.com/user-attachments/assets/da64e132-89cd-4b8c-affc-774ab147a98d)
 
 ## Hello World Template vs App
 
@@ -168,7 +168,7 @@ And here is an example of what the actor for the character named “Apple” see
 
 Here is an example run-through of the sample script (included as `script.ink` with the Intrapology Hello World). This demo shows how the moderator view (top left), audience view (top right), and actor views (bottom left and right) change as the performance progresses:
 
-![Demonstration of running sample script](https://github.com/user-attachments/assets/2e52d864-066f-41e6-955b-4d931011e715)
+[Demonstration of running sample script](https://github.com/user-attachments/assets/2e52d864-066f-41e6-955b-4d931011e715)
 
 # Getting Started With the Intrapology Software
 
