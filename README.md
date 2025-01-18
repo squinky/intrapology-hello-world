@@ -1,3 +1,29 @@
+- [Introduction](#introduction)
+  - [The Intrapology Software in a Nutshell](#the-intrapology-software-in-a-nutshell)
+  - [Example](#example)
+  - [Hello World Template vs App](#hello-world-template-vs-app)
+- [Overview](#overview)
+  - [Performance Structure](#performance-structure)
+  - [User Interface](#user-interface)
+- [Getting Started With the Intrapology Software](#getting-started-with-the-intrapology-software)
+  - [Downloading the Starter Template](#downloading-the-starter-template)
+  - [Basic Configuration](#basic-configuration)
+  - [Testing a Performance on Your Computer](#testing-a-performance-on-your-computer)
+  - [Installing Inky](#installing-inky)
+- [Writing an Intrapology/Ink script](#writing-an-intrapologyink-script)
+  - [Basics](#basics)
+  - [Interactivity](#interactivity)
+  - [Conclusion](#conclusion)
+  - [Summary](#summary)
+- [Additional Technical Topics](#additional-technical-topics)
+  - [Configuration (`settings.json`)](#configuration-settingsjson)
+  - [Customizations to Visual Presentation (`settings.json` styles)](#customizations-to-visual-presentation-settingsjson-styles)
+- [Other](#other)
+  - [CSS Glossary](#css-glossary)
+  - [Accessibility Tips](#accessibility-tips)
+  - [Resources for Learning to Write Non-Linear Narratives](#resources-for-learning-to-write-non-linear-narratives)
+
+
 # Introduction
 
 ## The Intrapology Software in a Nutshell
@@ -8,14 +34,14 @@ Intrapology’s software is a tool for building performances which are interacti
 
 Our software facilitates the creation of performances that can incorporate and react to input from the audience. This is accomplished with the following features:
 
-- [Audience input UI:](#audience-view) Intrapology's software allows audience members to contribute via [multiple-choice](#multiple-choice) and [free-response](#free-response) questions.
+- [Audience input UI:](#audience-input) Intrapology’s software allows audience members to contribute via [multiple-choice](#multiple-choice) and [free-response](#free-response) questions.
 - Dynamic scripts: Our software allows authors to write dialogue and stories that change based on input received from the audience.
 
 ### Accessibility
 
-Helping make performances more accessible is a key motivation behind the existence of Intrapology's software. All performances built with the Intrapology software have these accessibility features:
+Making performances more accessible is a key goal of Intrapology’s software. All performances built with the Intrapology software have these accessibility features:
 
-- Both fully-online and hybrid performances are supported, through the inclusion of [a live video stream](#audience-view-main) in the UI. This allows performances built using the Intrapology software to be accessible to people who face barriers to in-person venues.
+- The UI includes [a live video stream](#audience-view-main), enabling both fully-online and hybrid performances. This allows performances built using the Intrapology software to be more accessible to people who face barriers to in-person venues.
 - A built-in subtitles interface which:
     - Automatically generates subtitles from the performance script.
     - [Displays subtitles](#subtitles-view) in sync with the performance.
@@ -24,7 +50,7 @@ Helping make performances more accessible is a key motivation behind the existen
 
 Here is an excerpt from a real performance built with our software (you can find the entire recording [here](https://peertube.intrapology.com/w/5Hrv9k1YgywsQh6TUFBzrB)):
 
-[Meghna Jayanth Oct 2024-Intro.webm](https://github.com/user-attachments/assets/da64e132-89cd-4b8c-affc-774ab147a98d)
+![Meghna Jayanth Oct 2024 Scratch Jam Performance - Intro](https://github.com/user-attachments/assets/da64e132-89cd-4b8c-affc-774ab147a98d)
 
 ## Hello World Template vs App
 
@@ -32,11 +58,11 @@ There are two versions of the Intrapology software available to download:
 
 ### Intrapology Hello World
 
-Intrapology Hello World is a preconfigured starter template. If you are new to our software, it is best to start with this version. The Hello World template is designed to enable artists with no software development knowledge to create complete performances. For information on how to download the Hello World template, see this section: [Downloading the Starter Template](#downloading-the-starter-template).
+Intrapology Hello World is a starter template for artists who have limited software development knowledge. If you are new to our software, it is best to start with this version. For information on how to download the Hello World template, see this section: [Downloading the Starter Template](#downloading-the-starter-template).
 
 ### Intrapology App
 
-Intrapology App is the code which handles the core functionality of Intrapology's software. If you end up needing to make customizations or add functionality beyond what is possible in the Hello World starter template, then you will need to build on top of the core Intrapology App code rather than the Hello World template. Building with Intrapology App requires the ability to program with JavaScript, React, and CSS. Intrapology App can be found here: [https://github.com/squinky/intrapology-app](https://github.com/squinky/intrapology-app).
+Intrapology App is the core of Intrapology’s software. If you want to make customizations that are not possible with the Hello World starter template, then you will need to build on top of the core Intrapology App code. Building with Intrapology App requires the ability to program with JavaScript, React, and CSS. Intrapology App can be found here: [https://github.com/squinky/intrapology-app](https://github.com/squinky/intrapology-app).
 
 # Overview
 
@@ -50,7 +76,7 @@ A video stream where audience members can see and hear your actors.
 
 ### Moderator
 
-A member of your crew who is responsible for controlling the pace of the performance. The Intrapology software automatically handles tasks such as displaying the current line of dialogue to the relevant actor and gathering audience input. However, in order for the software to know when it is time to advance to the next line of dialogue, [manual input from a moderator is needed](#performance-controls).
+A member of your crew who controls the pace of the performance. The Intrapology software handles displaying current dialogue to performers, and collecting audience input. However, the software needs [input from the moderator](#performance-controls) to know when to advance to the next line of the script.
 
 ### Actors
 
@@ -58,35 +84,35 @@ People who will be portraying characters in the performance. Each actor gets the
 
 ### Audience Input
 
-The audience also [plays an active role](#audience-input) in the formal flow of the performance, through voting on multiple-choice questions as well as responding to free-response prompts.
+The audience [plays an active role](#audience-input) in the flow of the performance. The audience interacts through multiple-choice questions and responding to free-response prompts.
 
 ## User Interface
 
 During a performance, the Intrapology software provides four different views:
 
-1. [Audience View](#audience-view) 
-2. [Subtitles View](#subtitles-view) 
-3. [Moderator View](#moderator-view) 
-4. [Actor View](#actor-view) 
+1. [Audience View](#audience-view)
+2. [Subtitles View](#subtitles-view)
+3. [Moderator View](#moderator-view)
+4. [Actor View](#actor-view)
 
 ### Audience View
 
-The audience view is available at the base URL where your performance is being hosted. So if you are hosting the performance at `http://my-online-performance.website`, then the audience view will be available there by default.
+The audience view is available at the ‘base’ URL where your performance is being hosted. For example: if you host the performance at `http://my-online-performance.website`, then the audience view will be available at that URL.
 
 The audience view has two sections:
 
-1. <a id="audience-view-main" aria-hidden="true"></a>The main area of the audience view displays [the video feed](#videoCallEmbedLink) for the performance.
-2. <a id="audience-input" aria-hidden="true"></a>The audience input area of the audience view is where audience members can select options during a multiple-choice vote or write whatever text they would like during an audience free-response portion of a performance. When audience input is not being accepted, some placeholder text will be displayed. The default placeholder text is “You don't have to do anything right now - just sit back and enjoy the show!”. You can change the placeholder text to something else by changing the value of the [`"defaultAudienceMessage"` option](#defaultAudienceMessage) in `intrapology-hello-world/settings.json`.
+1. <a id="audience-view-main" aria-hidden="true"></a>**The video feed area**: Displays [the video feed](#videocallembedlink) for the performance.
+2. <a id="audience-input" aria-hidden="true"></a>**The audience input area**: This is where audience members can select options during a multiple-choice vote. This is also where audience members can write anything they would like during an audience free-response section. When audience input is not being accepted, some placeholder text will be displayed. The default placeholder text is “You don't have to do anything right now - just sit back and enjoy the show!”. You can change the placeholder text to something else by changing the value of the [`"defaultAudienceMessage"`](#defaultaudiencemessage)[ option](#defaultaudiencemessage) in `intrapology-hello-world/settings.json`.
 
-<a id="audience-view-example" aria-hidden="true"></a>![ui_audience_annotated.jpeg](doc/ui_audience_annotated.jpeg)
+<a id="audience-view-example" aria-hidden="true"></a>![An annotated screenshot of the Intrapology audience view. The performance video feed is described by VoiceOver as “[Performance Video Stream Title] - YouTube, frame”.](doc/ui_audience_annotated.jpeg)
 
-<a id="multiple-choice" aria-hidden="true"></a>During an audience vote, the input section of the Audience view will present audience members with some text prompting them to select an option, and buttons for each option available. The text for each option button includes the number of votes which that option has received. The button for the option which currently has the most votes will be tagged with a “⭐️ winning” label. The vote counts and winning tag are updated in real time. If an audience member has selected an option then the relevant button will be tagged with a “✅ selected” label.
+<a id="multiple-choice" aria-hidden="true"></a>During an audience vote, the input section will contain a text prompt, and buttons for voting. The text for each option button includes the number of votes which that option has received. The button for the option which currently has the most votes will be tagged with a “⭐️ winning” label. The vote counts and winning tag are updated in real time. If an audience member has selected an option, then its relevant button will be tagged with a “✅ selected” label.
 
-![ui_audience_vote.jpeg](doc/ui_audience_vote.jpeg)
+![A screenshot of the Intrapology audience view during an audience multiple-choice vote. The audience input area of the view includes some text prompting the audience for input (in this screenshot, the text is “What should be our next topic of discussion?”), followed by buttons to vote for one of the available options. Each button is labelled with text describing the option that the button is for. The text for the winning option will be prefixed with “⭐️ winning”, and the text for the option the audience member has currently selected will be suffixed with “✅ selected”.](doc/ui_audience_vote.jpeg)
 
 <a id="free-response" aria-hidden="true"></a>During audience free-response, the input section of the audience view will present audience members with a message prompting them to write about something, and a text input box in which to write. Below the input box is a bulleted list of the text submissions from all audience members. The list of text submissions updates in real time.
 
-![ui_audience_rant.jpeg](doc/ui_audience_rant.jpeg)
+![A screenshot of the Intrapology audience view during an audience free-response period. The audience input area of the view includes some text prompting the audience for their thoughts (in this screenshot, the text is “Write any thoughts you have about cats here”), followed by an "edit text" input element, followed by a "Submit" button.](doc/ui_audience_rant.jpeg)
 
 ### Subtitles View
 
@@ -94,13 +120,13 @@ The subtitles view is available at `<base-url>/#subtitles`. So if you are hostin
 
 The subtitles view provides subtitles for the performance, generated directly from the script. The name of the current speaker is displayed, along with the dialogue they are speaking.
 
-![ui_subtitles.jpeg](doc/ui_subtitles.jpeg)
+![A screenshot of the subtitles view. The line of dialogue being presented in this screenshot is “APPLE: Hi, I’m the first video caller!”](doc/ui_subtitles.jpeg)
 
 ### Moderator View
 
 The moderator view is available at `<base-url>/#moderator`. So if you are hosting the performance at `http://my-online-performance.website`, then the moderator view will be accessible via `http://my-online-performance.website/#moderator`.
 
-Accessing the moderator view requires entering a password. The password is “butts” by default, but you can [set a different password](#modPassword).
+Accessing the moderator view requires entering a password. The password is “butts” by default, but you can [set a different password](#modpassword).
 
 The moderator view contains the following sections:
 
@@ -140,13 +166,13 @@ And here is an example of what the actor for the character named “Apple” see
 
 ### Demonstration
 
-Here is an example run-through of the sample script (included as `script.ink` with the Intrapology Hello World), showing how of the moderator view (top left), audience view (top right), and actor view (bottom left and right) change as the performance progresses:
+Here is an example run-through of the sample script (included as `script.ink` with the Intrapology Hello World). This demo shows how the moderator view (top left), audience view (top right), and actor views (bottom left and right) change as the performance progresses:
 
-https://github.com/user-attachments/assets/2e52d864-066f-41e6-955b-4d931011e715
+![Demonstration of running sample script](https://github.com/user-attachments/assets/2e52d864-066f-41e6-955b-4d931011e715)
 
 # Getting Started With the Intrapology Software
 
-This section will walk you through the essential setup necessary to edit and test Intrapology performances.
+Here we will walk you through the setup needed to edit and test Intrapology performances.
 
 ## Downloading the Starter Template
 
@@ -158,32 +184,29 @@ Once you have clicked the “Code” button, a box will appear below the button.
 
 ![hello_world_github_crop_2_annotated.jpeg](doc/hello_world_github_crop_2_annotated.jpeg)
 
-Click the “Download ZIP” link. When the ZIP file is finished downloading, extract it somewhere on your computer. You can name the folder whatever you would like, but for this guide it will be assumed that the folder is named “intrapology-hello-world”.
+Click the “Download ZIP” link. When the ZIP file is finished downloading, extract it somewhere on your computer. For this guide it will be assumed that the folder is named “intrapology-hello-world”.
 
 ## Basic Configuration
 
-Several aspects of your performance can be configured by editing the `settings.json` file found in the `intrapology-hello-world` folder. In order to get a basic starter performance up and running, we will only be going over a couple of the available options. For details on all available configuration options, go to: [Configuration (`settings.json`)](#configuration-settingsjson).
+Many aspects of your performance can be configured by editing the `settings.json` file found in the `intrapology-hello-world` folder. To get a basic starter performance up and running, we will only be going over a couple of the available options. For details on all available configuration options, go to: [Configuration (settings.json)](#configuration-settingsjson).
 
 ### Editing Settings
 
-If you are not used to editing `.json` files, then the file extension and contents may appear at first like something that is only meant for computer wizards to work with, but this is not the case. `settings.json` is really just a text file with a list of settings separated by commas. You can open and edit this file with any app that can edit text (such as Notepad on Windows and TextEdit on MacOS).
+If you are not used to editing `.json` files, then settings.json may seem like something that only computer wizards can understand. Do not worry. `settings.json` is really just a text file with a list of settings separated by commas. You can open and edit this file with any app that can edit text (such as Notepad on Windows and TextEdit on MacOS).
 
-In general, settings are specified in the `settings.json` file with the following format:
+In general, settings are specified in the `settings.json` file with this format:
 
 ```json
 "OPTION NAME": "OPTION VALUE",
 ```
 
-> [!TIP]
-> When discussing JSON, software developers will likely refer to `"OPTION NAME"` as a “field” or “property”, and will usually refer to `"OPTION VALUE"` as the value of that field/property. You do not need to know this to work with Intrapology on your own, but it may be helpful to know if you are collaborating with software developers or if you are looking for help online.
-
 Open `settings.json` in a text editor of your choice, and we will take a look at a couple of important settings.
 
 ### Performance ID
 
-The ‘ID’ of your performance is a unique name that is used to distinguish it from other performances. The performance ID is not the title of your performance that is shown to the audience. For setting the title of your performance that will be displayed in the audience view, see [this section](#title).
+The ‘ID’ of your performance is a unique name that is used to distinguish it from other performances. The performance ID is not the title of your performance that is shown to the audience. For setting the title text of your performance that will be displayed in the audience view, see [this section](#title).
 
-The performance ID is used by the database that keeps track of the state of a performance (e.g. the current line of dialogue, audience voting selections, etc). It is very important that you set a unique ID for your performance. The Intrapology software will behave unpredictably if running multiple performances with the same ID at the same time.
+The performance ID is used by the Intrapology software to keep track of the current state of your performance. This includes the current line of dialogue, and audience voting selections. It is very important that you set a unique ID for your performance. Your performance will not function as expected if it has the same ID as another performance.
 
 By default, the performance ID is specified on line 2 of `settings.json`:
 
@@ -191,17 +214,17 @@ By default, the performance ID is specified on line 2 of `settings.json`:
 "performanceId": "hello-world",
 ```
 
-This line specifies that the setting called `"performanceId"` should have the value `"hello-world"`. However, since it is unsafe to use the default setting, change the text `hello-world` between the quotes to something else that you are confident nobody else will choose as an ID for their performance. The longer and more particular your ID is, the better.
+This line specifies that the setting called `"performanceId"` should have the value `"hello-world"`. However, it is not safe to use the default setting. Change the text `hello-world` between the quotes to something else. Make sure to use something that you are certain nobody else will choose as an ID for their performance. The longer and more particular your ID is, the better.
 
 > [!IMPORTANT]
 > Your performance ID should not contain any whitespace characters (spaces, tabs, line returns, etc).
 
 ### Character Names
 
-The other option which, if not set properly, will prevent the Intrapology software from functioning properly, is `"callers"`. The `"callers"` setting is used to specify the names of all characters which have dialogue in your performance.
+The other option which must be set properly in order for your performance to work is `"callers"`. The `"callers"` setting is used to specify the names of characters which have dialogue.
 
 > [!NOTE]
-> You do not need to change the `"callers"` setting if you will be following the script writing tutorial. The tutorial script uses character names which are already specified by default in `settings.json`. However, it is very important to understand how to register character names properly since you will likely be writing something of your own with different characters.
+> You do not need to change the `"callers"` setting if you will be following the script writing tutorial. The characters in the tutorial script are included by default in  `settings.json`. However, it is important to know how to set character names for your own scripts.
 
 On line 5 of `settings.json` is the following:
 
@@ -209,7 +232,7 @@ On line 5 of `settings.json` is the following:
 "callers": [ "Apple", "Banana" ],
 ```
 
-This line specifies that the performance has two dialogue-speaking characters: a character named Apple, and a character named Banana. When listing your own character names for the `"callers"` setting, be careful to follow these formatting requirements:
+This specifies that there are two dialogue-speaking characters: a character named `“Apple”`, and a character named `“Banana”`. When setting your own character names, be careful to follow these formatting requirements:
 
 1. The list of names must be surrounded by a pair of square brackets `[]`.
 2. The names in the list must be separated by commas.
@@ -227,7 +250,7 @@ This line specifies that the performance has two dialogue-speaking characters: a
 
 ## Testing a Performance on Your Computer
 
-Our software is designed to run on a web server on the internet, but with a small bit of setup it is possible to do test runs of performances on your own computer.
+Our software is designed to run on a web server on the internet. But with a small bit of setup, it is possible to do test runs of performances on your own computer.
 
 To run the Intrapology software on your computer, you will need to install a program that runs a server ‘locally’. This guide will show you how to use an app called Servez for this purpose.
 
@@ -240,13 +263,13 @@ To download the Servez installer, go here: [https://github.com/greggman/servez/r
     - If you are unsure which kind of Mac you have, download “Servez-\<version\>-universal.dmg”
 - If you are using Linux:
     - If you are using Ubuntu, you probably want to download "Servez_\<version\>_amd64.snap”
-    - Otherwise, you probably want to download “Servez-\<version\>.AppImage” (instructions for how to run an AppImage can be found here: [https://docs.appimage.org/introduction/quickstart.html#ref-quickstart](https://docs.appimage.org/introduction/quickstart.html#ref-quickstart))
+    - Otherwise, you probably want to download “Servez-\<version\>.AppImage”. Instructions for how to run an AppImage can be found here: [https://docs.appimage.org/introduction/quickstart.html#ref-quickstart](https://docs.appimage.org/introduction/quickstart.html#ref-quickstart).
 
-Once installed, open Servez and do the following (the image below is annotated to indicate where the buttons referred to are located):
+Once installed, open Servez. Then, do the following (the image below is annotated to show where buttons are located):
 
 1. Click the “…” button under the “Folder to Serve” heading, located near the top right corner of the app window. A file window will open. Find your `intrapology-hello-world` folder and select it.
 2. Click the “Start” button, located towards the bottom left corner of the app window.
-3. Click the “Launch Browser” button, located next to the “Start” button. This should open the [audience view](#audience-view-example) of the Intrapology template performance in your default web browser.
+3. Click the “Launch Browser” button, located next to the “Start” button. This should open the [audience view](#audience-view-example) of the template performance in your web browser.
 
 <p width="100%" align="center">
     <a target="_blank" href="/doc/servez_annotated.jpeg">
@@ -254,11 +277,11 @@ Once installed, open Servez and do the following (the image below is annotated t
     </a>
 </p>
 
-Feel free to close Servez once you have verified that you are able to run a test Intrapology performance on your computer. You will not need to run it again until later in this guide. Servez will remember the Intrapology folder you selected, so from now on you will only need to click “Start” and then “Launch Browser” in order to test.
+Feel free to close Servez for now. You will not need to run it again until later in this guide. Servez will remember the Intrapology folder you selected. From now on you will only need to click “Start” and then “Launch Browser” in order to test.
 
 ## Installing Inky
 
-In order to work with Intrapology performance scripts, you will need an app called Inky. To get Inky, go to this page: [https://www.inklestudios.com/ink/](https://www.inklestudios.com/ink/), and scroll down to the “Getting Started” section (pictured below). Click the appropriate download button for your computer to download the Inky installer.
+To work with Intrapology performance scripts, you will need an app called Inky. To get Inky, go to this page: [https://www.inklestudios.com/ink/](https://www.inklestudios.com/ink/), and scroll down to the “Getting Started” section (pictured below). Click the appropriate download button for your computer to download the Inky installer.
 
 ![ink-download-crop-annotated.jpeg](doc/ink-download-crop-annotated.jpeg)
 
@@ -266,13 +289,13 @@ In order to work with Intrapology performance scripts, you will need an app call
 
 ## Basics
 
-Intrapology scripts use a format called [Ink](https://www.inklestudios.com/ink/). Ink is like the natural human language that you are used to writing in, just with a few extra rules for grammar and punctuation. This section will walk you through the process of writing a minimal script. If you would prefer to learn by reading a concise list of the grammatical rules for Ink/Intrapology scripts instead of a tutorial, skip to this section: [Summary](#summary) 
+Intrapology scripts use a format called [Ink](https://www.inklestudios.com/ink/). Ink is like the human language that you are used to writing in, but with some extra rules for grammar and punctuation. This section will walk you through the process of writing a minimal script. If you would prefer to learn by reading a list of the grammar and punctuation rules, skip to this section: [Summary](#summary).
 
 A basic functioning Intrapology script involves the following elements:
 
-1. [Knots](#knots) 
-2. [Dialogue](#dialogue) 
-3. [Diverts](#diverts) 
+1. [Knots](#knots)
+2. [Dialogue](#dialogue)
+3. [Diverts](#diverts)
 
 which are explained in this guide.
 
@@ -281,7 +304,7 @@ which are explained in this guide.
 Open Inky. You will see the default starter Ink script contents in the editor panel (the left half of the window). Delete all text except for the line with `-> END`, then save this new script (”File” menu → “Save Project”) as `tutorial-script.ink` in your `intrapology-hello-world` folder.
 
 > [!TIP]
-> Throughout the “Writing an Intrapology/Ink script” guide, you will be instructed to add various bits of text to your tutorial script. When adding the text to your script, try to do so by typing the text yourself rather than copying and pasting. This will help your brain to process and retain the information being covered.
+> Throughout the “Writing an Intrapology/Ink script” guide, you will be instructed to add text to your tutorial script. When adding text, try to do so by typing the text yourself rather than copying and pasting. This will help your brain to process and retain the information being covered.
 
 ### Knots
 
@@ -310,13 +333,12 @@ Add the following text on its own line at the beginning of the script (before th
 
 In Ink, writing `->` followed by a name means: ‘now go to the knot with this name’. This is called a “divert”. Every Intrapology script must begin with a divert specifying which knot to start the performance with (even if the script only has one knot). The divert above tells the Intrapology software that your performance starts with the knot named “Start”.
 
-The `-> END` divert already present at the end of the “Start” knot tells the Intrapology software that once the “Start” knot is finished, the performance should end. Note that you do not need to have a knot named `END`. `END` is a special built-in key word which does not refer to a knot in your script.
+The `-> END` divert present at the end of the “Start” knot tells the Intrapology software that once the “Start” knot is finished, the performance should end. Note that you do not need to have a knot named `END`. `END` is a special built-in key word which does not refer to a knot in your script.
 
 > [!TIP]
 > It is best that whenever you add a new knot to your script, you are sure to do the following:
->
 > 1. End the knot with a divert either to `END` or to another knot.
-> 2. Consider which other knot(s), if present, should divert to this new knot, and add the associated diverts as soon as possible
+> 2. Consider which other knot(s), if present, should divert to this new knot. Then add the associated diverts as soon as possible
 > 
 > This will reduce the likelihood of unexpected problems later.
 
@@ -334,17 +356,17 @@ Without any content, this is not a very interesting script. Luckily, adding dial
 
 ### Dialogue
 
-To add some dialogue to the script, put the following text starting on a new line under the `== Start` heading and before the `-> END` divert:
+To add some dialogue to the script, add the following at a new line under the `== Start` heading and before the `-> END` divert:
 
 ```
 Apple: Hi, I'm the first video caller!
 Banana: Hi, I'm the second video caller!
 ```
 
-Writing the name of a character (in this case “Apple” or “Banana”), followed by a colon “:”, followed by some text means ‘the character with this name says this text’. When each line of dialogue is reached during a performance, the Intrapology interface will show it to the relevant performer. Audience members who have loaded the [Subtitles View](#subtitles-view) will be shown the line of dialogue as well. The moderator view also displays the current line of dialogue.
+Writing the name of a character (in this case `Apple` or `Banana`), followed by a colon `:`, followed by some text, means: ‘the character with this name says this text’. When each line of dialogue is reached during a performance, the Intrapology interface will show it to the relevant performer. The [Subtitles View](#subtitles-view) will show the line of dialogue as well. The moderator view also displays the current line of dialogue.
 
 > [!WARNING]
-> Remember: all character names used for dialogue in your script must be listed via the [`"callers"` option](#callers) in `settings.json`. Since “Apple” and “Banana” are already specified by default for the Intrapology Hello World template, no action is required for the current script to function properly. However, if you write a script with differently named characters, you will need to update `settings.json` accordingly.
+> Remember: all characters with dialogue in your script must be listed via the [`"callers"`](#callers)[ option](#callers) in `settings.json`. Since `“Apple”` and `“Banana”` are specified by default in the Intrapology Hello World template, no action is required for for now. However, if you write a script with different character names, you will need to update `settings.json`.
 
 At this point, the contents of your script file should look like this:
 
@@ -364,15 +386,15 @@ This is enough to use for a trial run with the Intrapology software.
 
 ### Running the Performance Locally
 
-If you have not already done so, you must [set a unique Performance ID](#performance-id) and [install and set up Servez](#testing-a-performance-on-your-computer) before continuing.
+If you have not already done so, [set a unique Performance ID](#performance-id) and [install and set up Servez](#testing-a-performance-on-your-computer) before continuing.
 
 1. First you need to ‘export’ the script to a file format that the Intrapology software can use. To do so, go to the “File” menu and click the item labelled “Export to JSON…”. Name the exported file `script.json` (make sure you aren’t using the default name `script.ink.json`) and save it in your `intrapology-hello-world` folder.
 2. Open Servez and click the “Start” button.
-3. Click the “Launch Browser” button, which will open the Audience View in your default web browser. Make a note of the URL in the address bar (it will be something like “localhost:8080”), you will need it for the next step. It will be referred to from here on as “\<base url\>”.
+3. Click the “Launch Browser” button, which will open the Audience View in your web browser. Make a note of the URL in the address bar (it will be something like `localhost:8080`), you will need it for the next step. It will be referred to from here on as `<base url>`.
 4. Go to the following additional pages, each in a separate web browser window:
-    1. Go to “\<base-url\>/#caller” and select “Apple”
-    2. Go to “\<base-url\>/#caller” and select “Banana”
-    3. Go to “\<base-url\>/#moderator” and enter the default password (”butts”), unless you have changed the password to something else.
+    1. Go to `<base-url>/#caller` and select “Apple”
+    2. Go to `<base-url>/#caller` and select “Banana”
+    3. Go to `<base-url>/#moderator` and enter the default password, ”butts”, unless you have changed the password to something else.
 
 You should now be able to use the Moderator View to step through the performance so far. Here is a screen recording of what this should look like (minus the Audience View):
 
@@ -384,11 +406,11 @@ When you are ready to move on, simply close the browser windows, click the “St
 
 The key elements of building interactive performances are:
 
-1. [Multiple-Choice Audience Input](#multiple-choice-audience-input) 
-2. [Flow and Choice Branching](#flow-and-choice-branching) 
-3. [Gathers](#gathers) 
-4. [Free-Response Audience Input](#free-response-audience-input) 
-5. [Variables](#variables) 
+1. [Multiple-Choice Audience Input](#multiple-choice-audience-input)
+2. [Flow and Choice Branching](#flow-and-choice-branching)
+3. [Gathers](#gathers)
+4. [Free-Response Audience Input](#free-response-audience-input)
+5. [Variables](#variables)
 
 ### Multiple-Choice Audience Input
 
@@ -416,28 +438,28 @@ Banana: What should be our next topic of discussion?
 
 (After this change, you will likely see a ⚠️ symbol at the left edge of the Inky window. We will deal with this shortly.)
 
-In order to have an audience multiple-choice response section of a performance, the script must have the following:
+To have an audience multiple-choice vote, a script must have the following:
 
-1. A block of text prefixed with the `@` symbol. This text will be shown to the audience at the top of [the audience view](#audience-view) UI during the voting period. The placement of this block of text determines at what point in the performance the audience vote UI becomes visible.
+1. A block of text prefixed with the `@` symbol. This text will be shown to the audience at the top of [the audience view](#audience-view) UI during the voting period. The placement of this block of text determines when the audience vote UI becomes visible.
 2. A set of choices for the audience to vote on. An `@` block will be associated with the closest group of choices below the `@` text. A choice is prefixed with the `*` symbol. Each choice should be on its own line.
 
-During a performance of a script containing the example above, the audience will be presented with the choice UI once the `@` has been reached. When this happens, a title with the text "What should be our next topic of discussion?" will be displayed, as will 3 buttons, each having, respectively, the following text:
+During a performance, the audience will be presented with the choice UI once the `@` has been reached. When this happens, a title with the text "What should be our next topic of discussion?" will be displayed, as will 3 buttons, each having, respectively, the following text:
 
 - "Apple: The weather!"
 - "Apple: Cats!"
 - "Apple: Late-stage capitalism!"
 
-Whichever choice receives the most audience votes will automatically become a part of the script as the next line of dialogue for the character named "Apple".
+The choice with the most votes becomes the next line of dialogue for the character `Apple`.
 
 > [!NOTE]
-> The prompt and choice input will remain visible to the audience until the choice group has been reached, at which point they will both disappear.
+> The voting UI will remain visible to the audience until the choice group has been reached.
 
 > [!TIP]
-> You can use `*` or `+` for choices. For Intrapology these two options have the same meaning, but in other uses of Ink they function differently. We recommend using `*` in general, since the behavior of `+` in Ink and in the Intrapology software are different, whereas the behavior of `*` is the same in both contexts.
+> You can use `*` or `+` for choices. For Intrapology these two options have the same meaning. But in other uses of Ink, `*` and `+` work differently. We recommend using `*` in general, since it works the same in both Ink and Intrapology, whereas `+` has a special meaning outside of Intrapology.
 
 ### Flow and Choice Branching
 
-At this point we need to discuss the concepts of **flow** and **choice branching**.  'Flow' is a term used to describe the path taken through an Ink/Intrapology script. The script itself is a static document in which all content is present at once, but a live performance proceeds--flows--through the script one bit at a time. The flow of a performance is the collection of sequenced steps through the source script. Up until adding the multiple choice section, we have been assembling a script which has a single possible flow: the sequence of steps in a performance of the script would be the same every time. However, with the addition of audience choices, we now have a script which has more than one possible flow. At the step when the audience selects one of the available choices, the performance flow will follow one of the several available 'branches'. The diagram below visualizes the diverging possible flows of the script:
+At this point we need to discuss the concepts of **flow** and **choice branching**.  'Flow' is a term used to describe the path taken through an Ink/Intrapology script. The script itself is a static document in which all content is present at once. But a live performance proceeds (flows) through the script one bit at a time. The flow of a performance is the collection of sequenced steps through the source script. Before adding the multiple choice section, we had written a script with a single possible flow. The sequence of steps in a performance of the script would have been the same every time. However, with the addition of audience choices, we now have a script which has more than one possible flow. When the audience selects a choice, the performance flow will follow a 'branch' for that choice. The diagram below visualizes the diverging possible flows of the script:
 
 ```mermaid
 graph TD
@@ -453,13 +475,13 @@ graph TD
 
 The diagram shows each choice branch leading to a different "???". There are two important points which need to be noted here:
 
-- With Ink/Intrapology scripts, each individual choice is the start of its own branch of the flow. Each choice leads to a next step which is distinct from the steps of its 'sibling' choices. This is why the diagram shows each choice having its own outgoing arrow. What happens after a given choice is represented in a script by whatever content comes between that choice and the next sibling choice. An example of this will be given shortly.
-- Each choice necessarily leads to a next step, but our script so far does not specify what happens next for any of the choices present. Any choice which does not have an associated next step is akin to an implicit dead end, which is not allowed in an Intrapology script. Such a choice leads to a scenario where the flow has nowhere left to go even though an `-> END` divert has not been reached. Therefore it is required to specify what should happen after each choice. Every choice must be followed by *something*, even if that something is simply `-> END`. Luckily, Inky will display a warning when there is a choice which leads to a dead end.
+- With Ink/Intrapology scripts, each individual choice is the start of its own branch of the flow. Each choice leads to a next step which is distinct from the steps of its 'sibling' choices. This is why the diagram shows each choice having its own outgoing arrow. What comes after a choice is the content written between that choice and the next choice. An example of this will be given shortly.
+- Each choice leads to a next step, but our script so far does not specify what happens next for any of the choices. Any choice which does not lead to anything else is a dead end, which is not allowed. Such a choice leads to a scenario where the flow has nowhere left to go, even though an `-> END` divert has not been reached. So it is required to specify what should happen after each choice. Every choice must be followed by *something*, even if that something is simply `-> END`. Luckily, Inky will display a warning when there is a choice which leads to a dead end.
 
 > [!NOTE]
-> Ink requires that every possible user flow leads to a `-> END`. In cases where flow can run out without terminating in a `-> END`, Inky will highlight the relevant line of text with a ⚠️ symbol on the left edge of the window. The following warning message will be presented when hovering over the highlighted line: “Apparent loose end exists where the flow runs out.”
+> Ink requires that every possible user flow leads to a `-> END`. In cases where flow can run out before a `-> END`, Inky will highlight the relevant line of text with a ⚠️ symbol on the left edge of the window. This warning message will be included: “Apparent loose end exists where the flow runs out.”
 
-In order to appease the computer, we can amend our recently added group of choices like so:
+To appease the computer, we can amend our recently added group of choices like so:
 
 ```
 * Apple: The weather!
@@ -471,7 +493,7 @@ In order to appease the computer, we can amend our recently added group of choic
 ```
 
 > [!TIP]
-> Choice branch content does not need to be indented (as it is in the above snippet), however the use of indentation can make the script easier to read at a glance.
+> Choice branch content does not need to be indented (as it is in the above snippet). However the use of indentation can make the script easier to read at a glance.
 
 Now the performance will properly end if any of the listed choices are selected. The diagram below depicts the flow options for this updated script:
 
@@ -487,7 +509,7 @@ graph TD
   E --> H{END}
 ```
 
-Non-choice content directly below a choice represents what should happen after that choice is selected. Completely unique branches can be written this way. For example, with the following (do not add this to your script):
+Content directly below a choice indicates what should come after that choice. Completely unique branches can be written this way. For example, with the following (do not add this to your script):
 
 ```
 * Apple: The weather!
@@ -501,11 +523,11 @@ Non-choice content directly below a choice represents what should happen after t
   -> YetAnotherKnot
 ```
 
-it would be the case that if the "Apple: Cats!" line is selected, the performance would next proceed with the line "Banana: Some of my best friends are cats.", and then the performance would divert to the knot titled “SomeOtherKnot”. The content for the other two choices would not be included in that performance.
+it would be the case that if the `Apple: Cats!` line is selected, the performance would next proceed with the line `Banana: Some of my best friends are cats.`, and then the performance would divert to the knot titled `SomeOtherKnot`. The content for the other two choices would not be included in that performance.
 
 ### Gathers
 
-Writing groups of choices which lead to a shared outcome can be tiresome when having to write the same thing after each choice (as we have so far in this guide). For these kinds of situations, Ink provides something called a 'gather'. Instead of having a dedicated `-> END` after each choice, write the following:
+Writing shared outcomes for groups of choices can be tiresome when having to write the same thing after each choice. For these kinds of situations, Ink provides something called a 'gather'. Instead of having a dedicated `-> END` after each choice, write the following:
 
 ```
 * Apple: The weather!
@@ -783,7 +805,7 @@ Banana: That's all, folks!
 
 ### **performanceId**
 
-**[REQUIRED]** 
+**[REQUIRED]**
 
 A unique name for your performance. Should not include spaces. Make sure this is something that another performance will not be likely to use (for example, something generic like “performance” or “my-performance” is a bad idea).
 
@@ -819,7 +841,7 @@ The following options are available for customizing the look of the Intrapology 
 
 ### **desktopBackground**
 
-**Type:** [Background](#background) 
+**Type:** [Background](#background)
 
 This determines the background color/image for the [main area of the Audience View](#audience-view-main). By default this is set to an animated image of flickering stars.
 
@@ -829,7 +851,7 @@ Here is an example of what the Audience View UI looks like when `desktopBackgrou
 
 ### **interactBackground**
 
-**Type:** [Background](#background) 
+**Type:** [Background](#background)
 
 This determines the background color/image for the [audience input area of the Audience View](#audience-input). By default this is set to a slightly transparent black.
 
@@ -839,7 +861,7 @@ Here is an example of what the Audience View UI looks like when `interactBackgro
 
 ### **mainFont**
 
-**Type:** [Font](#font) 
+**Type:** [Font](#font)
 
 This determines the font for all text in the UI except for subtitles. By default this is set to “Courier”.
 
@@ -849,7 +871,7 @@ Here is an example of what the Audience View UI looks like when `mainFont` has b
 
 ### **mainTextColor**
 
-**Type:** [Color](#color)
+**Type: **[Color](#color)
 
 This determines the color for:
 
@@ -869,7 +891,7 @@ Here is an example of what the Audience View UI looks like when `mainTextColor` 
 
 ### **taskbarBackground**
 
-**Type:** [Background](#background) 
+**Type: **[Background](#background)
 
 This determines the background for the bar at the top of the Audience View UI, as well as the bar on top of the video feed box. By default this is set to “darkslateblue”.
 
@@ -879,7 +901,7 @@ Here is an example of what the Audience View UI looks like when `taskbarBackgrou
 
 ### **taskbarTextColor**
 
-**Type:** [Color](#color)
+**Type: **[Color](#color)
 
 This determines the color for all text and icons in the taskbar at the top of the Audience View, except for the leftmost icon. By default this is set to “black”.
 
@@ -889,7 +911,7 @@ Here is an example of what the Audience View UI looks like when `taskbarTextColo
 
 ### **taskbarHighlightColor**
 
-**Type:** [Color](#color)
+**Type: **[Color](#color)
 
 This determines the color for leftmost icon in the taskbar at the top of the Audience View. By default this is set to “dodgerblue”.
 
@@ -899,7 +921,7 @@ Here is an example of what the Audience View UI looks like when `taskbarHighligh
 
 ### **buttonBackground**
 
-**Type:** [Background](#background) 
+**Type: **[Background](#background)
 
 This determines the background for all buttons in the UI. By default this is set to “slateblue”.
 
@@ -909,7 +931,7 @@ Here is an example of what the Audience View UI looks like when `buttonBackgroun
 
 ### **buttonBackgroundHover**
 
-**Type:** [Background](#background) 
+**Type: **[Background](#background)
 
 This determines the background for any button that the mouse is hovering over. By default this is set to “dodgerblue”.
 
@@ -939,7 +961,7 @@ Here is an example of what the Audience View UI looks like when `mainHighlightBa
 
 ### **altHighlightBackground**
 
-**Type:** [Background](#background) 
+**Type: **[Background](#background)
 
 This determines the background color for the “✅ selected” tag in the multiple choice mode of the Audience View UI. By default this is set to “midnightblue”.
 
@@ -949,7 +971,7 @@ Here is an example of what the Audience View UI looks like when `altHighlightBac
 
 ### **highlightTextColor**
 
-**Type:** [Color](#color)
+**Type: **[Color](#color)
 
 This determines the text color for the “⭐️ winning” and “✅ selected” tags in the multiple choice mode of the Audience View UI. By default this is set to “white”.
 
@@ -959,7 +981,7 @@ Here is an example of what the Audience View UI looks like when `highlightTextCo
 
 ### **subtitlesBackground**
 
-**Type:** [Background](#background) 
+**Type: **[Background](#background)
 
 This determines the background for the Subtitles View. By default this is set to “darkslateblue”.
 
@@ -969,7 +991,7 @@ Here is an example of what the Subtitles View UI looks like when `subtitlesBackg
 
 ### **subtitlesTextColor**
 
-**Type:** [Color](#color)
+**Type: **[Color](#color)
 
 This determines the text color for the Subtitles View. By default this is set to “white”.
 
@@ -999,7 +1021,7 @@ A list of available color names can be found here: [https://developer.mozilla.or
 
 Colors can also be specified in terms of red, green, and blue intensity percentages (RGB), like this:
 
-```
+```javascript
 rgb(RED INTENSITY, GREEN INTENSITY, BLUE INTENSITY)
 ```
 
@@ -1049,7 +1071,7 @@ There is a small set of fonts which are present on nearly all modern devices, ma
 
 Here is a quick guide to using a custom font:
 
-1. Go to [fonts.google.com](https://fonts.google.com) and find a font that you like. This guide will refer to this font: [https://fonts.google.com/specimen/Libre+Baskerville](https://fonts.google.com/specimen/Libre+Baskerville), but the process will be the same for any other font.
+1. Go to [fonts.google.com](https://fonts.google.com/) and find a font that you like. This guide will refer to this font: [https://fonts.google.com/specimen/Libre+Baskerville](https://fonts.google.com/specimen/Libre+Baskerville), but the process will be the same for any other font.
 2. On the page for the font you have selected, click the “Get font” button in the upper right corner of the view.
 3. Make sure that the text at the top of the page says "1 font family selected”. If the number selected is greater than one you may have accidentally selected multiple fonts. In such a case you will want to use the trash bin icon next to any extraneous fonts to remove those from the selection list.
 4. Click the “Get embed code” button on the right-hand edge of the page.
