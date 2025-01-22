@@ -1,6 +1,6 @@
 # The Intrapology Software
 
-If you want to get set up as quickly as possible, start [here](./docs/getting-started-with-the-intrapology-software.md).
+If you want to get set up as quickly as possible, start [here](./docs/02_getting-started-with-the-intrapology-software.md).
 
 - [Introduction](#introduction)
   - [The Intrapology Software in a Nutshell](#the-intrapology-software-in-a-nutshell)
