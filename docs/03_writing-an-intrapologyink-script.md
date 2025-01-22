@@ -6,6 +6,7 @@
 - [Interactivity](#interactivity)
 - [Conclusion](#conclusion)
 - [Summary](#summary)
+- [Next Steps](#next-steps)
 
 ## Basics
 
@@ -86,7 +87,7 @@ Banana: Hi, I'm the second video caller!
 Writing the name of a character (in this case `Apple` or `Banana`), followed by a colon `:`, followed by some text, means: ‘the character with this name says this text’. When each line of dialogue is reached during a performance, the Intrapology interface will show it to the relevant performer. The [Subtitles View](./01_overview.md#subtitles-view) will show the line of dialogue as well. The moderator view also displays the current line of dialogue.
 
 > [!WARNING]
-> Remember: all characters with dialogue in your script must be listed via the [`"callers"`](./04_additional-technical-topics.md#callers)[ option](./04_additional-technical-topics.md#callers) in `settings.json`. Since `“Apple”` and `“Banana”` are specified by default in the Intrapology Hello World template, no action is required for for now. However, if you write a script with different character names, you will need to update `settings.json`.
+> Remember: all characters with dialogue in your script must be listed via the [`"callers"`](#character-names)[ option](#character-names) in `settings.json`. Since `“Apple”` and `“Banana”` are specified by default in the Intrapology Hello World template, no action is required for for now. However, if you write a script with different character names, you will need to update `settings.json`.
 
 At this point, the contents of your script file should look like this:
 
@@ -515,3 +516,34 @@ Banana: That's all, folks!
     - After a group of choices, `- -> SomeKnot` means ‘after a choice is selected, go to the knot named `SomeKnot`’.
     - A gather does not have to include a divert. You can also use a gather for a line of dialogue after choices, for example: `- Apple: Let's move on.`
     - To learn more, go here: [https://github.com/inkle/ink/blob/v.1.2.0/Documentation/WritingWithInk.md#part-2-weave](https://github.com/inkle/ink/blob/v.1.2.0/Documentation/WritingWithInk.md#part-2-weave)
+
+## Next Steps
+
+### Character Names
+
+If you write a performance with characters other than `Apple` and `Banana`, you will need to add your character names to  the `"callers"` setting in `settings.json`. The `"callers"` setting is used to specify the names of characters which have dialogue.
+
+> [!NOTE]
+> You do not need to change the `"callers"` setting if you will be following the script writing tutorial. The characters in the tutorial script are included by default in  `settings.json`. However, it is important to know how to set character names for your own scripts.
+
+On line 5 of `settings.json` is the following:
+
+```json
+"callers": [ "Apple", "Banana" ],
+```
+
+This specifies that there are two dialogue-speaking characters: a character named `“Apple”`, and a character named `“Banana”`. When setting your own character names, be careful to follow these formatting requirements:
+
+1. The list of names must be surrounded by a pair of square brackets `[]`.
+2. The names in the list must be separated by commas.
+3. Each name must be in double quotes.
+4. Each name should be capitalized exactly the same in `settings.json` and in your script.
+
+**Examples:**
+
+|  | Correct ✅ | Incorrect ❌ |
+| --- | --- | --- |
+| 1. Square Brackets around Names List | `"callers": ["Apple", "Banana"],` | `"callers": "Apple", "Banana",` |
+| 2. Commas between Names | `"callers": ["Apple", "Banana"],` | `"callers": ["Apple" "Banana"],` |
+| 3. Names in Double Quotes | `"callers": ["Apple", "Banana"],` | `"callers": [Apple, Banana],` |
+| 4. Capitalization | `"callers": [ "Apple", "Banana" ],` in `settings.json`, `Apple` with capital “A” in script. | `"callers": [ "Apple", "Banana" ],` in `settings.json`, `apple` with lowercase “a” in script. |

@@ -18,6 +18,7 @@ If you want to get set up as quickly as possible, start [here](./docs/02_getting
   - [Basics](./docs/03_writing-an-intrapologyink-script.md#basics)
   - [Interactivity](./docs/03_writing-an-intrapologyink-script.md#interactivity)
   - [Summary](./docs/03_writing-an-intrapologyink-script.md#summary)
+  - [Next Steps](./docs/03_writing-an-intrapologyink-script.md#next-steps)
 - [Additional Technical Topics](./docs/04_additional-technical-topics.md)
   - [Configuration (`settings.json`)](./docs/04_additional-technical-topics.md#configuration-settingsjson)
   - [Customizations to Visual Presentation (`settings.json` styles)](./docs/04_additional-technical-topics.md#customizations-to-visual-presentation-settingsjson-styles)
