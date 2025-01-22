@@ -1,3 +1,5 @@
+[(Click here for main table of contents)](../README.md)
+
 # Other
 
 - [CSS Glossary](#css-glossary)

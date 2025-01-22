@@ -1,3 +1,5 @@
+[(Click here for main table of contents)](../README.md)
+
 # Writing an Intrapology/Ink script
 
 - [Basics](#basics)

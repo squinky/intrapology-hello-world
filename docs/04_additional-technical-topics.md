@@ -1,3 +1,5 @@
+[(Click here for main table of contents)](../README.md)
+
 # Additional Technical Topics
 
 - [Configuration (`settings.json`)](#configuration-settingsjson)

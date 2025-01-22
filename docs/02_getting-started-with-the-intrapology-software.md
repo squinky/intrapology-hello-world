@@ -1,3 +1,5 @@
+[(Click here for main table of contents)](../README.md)
+
 # Getting Started With the Intrapology Software
 
 - [Downloading the Starter Template](#downloading-the-starter-template)
