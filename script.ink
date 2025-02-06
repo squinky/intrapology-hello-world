@@ -8,12 +8,17 @@ Apple: Hi, I'm the first video caller!
 
 Banana: Hi, I'm the second video caller!
 
+AUDIENCE_MESSAGE: Here is a message for the audience!
+
+Apple: Nice to meet you!
+
+Banana: You too!
+
 ->MultipleChoice
 
 ==MultipleChoice
 
-//choices start appearing from here onward
-@What should be our next topic of discussion?
+AUDIENCE_CHOICES: What should be our next topic of discussion?
 
 Apple: Here is some multiple-choice voting!
 
@@ -31,8 +36,7 @@ Banana: What should be our next topic of discussion?
 
 ==WriteIn
 
-//rant box appears from here onward
-@Write any thoughts you have about {topic} here.
+AUDIENCE_RANTBOX: Write any thoughts you have about {topic} here.
 
 Apple: Now it's time for some fun with write-in options!
 
@@ -40,7 +44,7 @@ Banana: The audience is going to type stuff in and you are going to read it all!
 
 Apple: That's right!
 
-Apple: Firebase-read
+Apple: RANT_READ
 
 Banana: That's all, folks!
 
