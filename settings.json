@@ -22,5 +22,10 @@
 		"subtitlesBackground": "darkslateblue",
 		"subtitlesTextColor": "white"
 	},
-	"defaultAudienceMessage": "You don't have to do anything right now - just sit back and enjoy the show!"
+	"defaultAudienceMessage": "You don't have to do anything right now - just sit back and enjoy the show!",
+	"endMessage": "Thank you for playing!",
+	"linkTree": [
+		{ "text": "Intrapology website", "url": "https://intrapology.com/" },
+		{ "text": "Soft Chaos website", "url": "https://softchaos.games/" }
+	]
 }
